@@ -92,3 +92,14 @@
     background-color: #f3f4f5;
     padding: 10px;
 }
+.item{
+    display: flex;
+}
+.namediv{
+    display: flex;
+    align-items: center;
+}
+.km,.ratelogo1{
+    display: flex;
+    align-items: center;
+}
