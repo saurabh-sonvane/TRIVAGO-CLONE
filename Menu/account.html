@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Settings</title>
+    <link rel="stylesheet" href="account.css">
+    <script src="https://kit.fontawesome.com/d042af9a63.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/5fc882c95a.js" crossorigin="anonymous"> </script>
+</head>
+
+<body>
+    <!--   ------------------------            Navbar Start           -------------------------------------              -->
+    <div id="navbar">
+        <div>
+            <img src="https://logos-world.net/wp-content/uploads/2022/05/Trivago-Logo-700x394.png" alt="">
+        </div>
+
+        <div id="navlist">
+            
+            <a href=""> <i class="fa-regular fa-heart" style="font-size: 23px; opacity: 80%;"> </i> &nbsp; My favourites
+            </a>
+            <a href=""> Log in </a>
+            <a> Menu &nbsp; <i class="fa-solid fa-chevron-down"></i> </a>
+            <a> INR &nbsp; <i class="fa-solid fa-chevron-down"></i> </a>
+        </div>
+    </div>
+    <!--           ----------------------------            Navbar end               ----------------------------------            -->
+    <div id="parent">
+        <div id="sidebar">
+            <i class="fa-solid fa-chevron-left backicon"></i>
+            <div style="margin-bottom: -8%;"><a  style="color: #3398f1;" href="" >Back</a></div>
+            <div> <a href="">Account Settings</a></div>
+
+            <div> <a href="">Recently viewed</a></div>
+            <div><a href="">Help and support</a></div>
+            <hr class="style11">
+            <div> <a style="color: black" href="">Log out</a></div>
+        </div>
+        <div id="mainbar">
+            <h1>Account Settings</h1>
+            <section>
+                <h3>Personal Information</h3>
+                <label for="">First name</label>
+                <br>
+                <input type="text" placeholder="e.g. john">
+                <br>
+                <label for="">Last name</label>
+                <br>
+                <input type="text" placeholder="e.g. Smith">
+                <br>
+                <div id="bd">
+                    <button id="update"> Update Personal Information</button>
+                    <button id="del">Delete my account</button>
+                </div>
+                <hr class="style13">
+            </section>
+            <section>
+                <div>
+                    <h3>Change Your Password</h3>
+                    <label for="">Old password</label>
+                    <br>
+                    <input  type="password">
+                    <br>
+                    <label for="">New password </label>
+                    <br>
+                    <div id="lastpassword">
+                        <input class="newly" type="password" />
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            class="pointer-events-none max-h-full eyeicon max-w-full">
+                            <g fill="currentColor">
+                                <path
+                                    d="M21.94 11.65C20.92 8.91 16.84 7 12 7s-8.92 1.91-9.94 4.65a1.05 1.05 0 000 .7C3.08 15.09 7.16 17 12 17s8.92-1.91 9.94-4.65a1.05 1.05 0 000-.7zM12 16a4 4 0 114-4 4 4 0 01-4 4z" />
+                                <circle cx="12" cy="12" r="2" />
+                            </g>
+                        </svg>
+                    </div>
+
+
+
+                    <br>
+                    <div id="hrd">
+                        <div>
+                            <hr class="style14">
+                        </div>
+                        <div>
+                            <hr class="style14">
+                        </div>
+                        <div>
+                            <hr class="style14">
+                        </div>
+                    </div>
+                    <div class="pr">
+                        <h3>Password requirements</h3>
+                    </div>
+
+                    <ul>
+                        <div class="li1">
+                            <li>Has minimum 10 characters.</li>
+                            <p>0/10</p>
+                        </div>
+                        <div class="li2">
+                            <li>Contains at least 1 upper case character.</li>
+                            <p>0/1</p>
+                        </div>
+                        <button id="update"> Change your password</button>
+                    </ul>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
