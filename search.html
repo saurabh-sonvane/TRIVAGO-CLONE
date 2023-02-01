@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,8 +8,9 @@
     <title>Document</title>
     <script src="https://kit.fontawesome.com/5fc882c95a.js" crossorigin="anonymous"> </script>
     <link rel="stylesheet" href="search.css">
-    
+
 </head>
+
 <body>
     <div id="navbar">
         <div>
@@ -16,11 +18,57 @@
         </div>
 
         <div id="navlist">
-            <a href=""> <i class="fa-regular fa-heart" style="font-size: 23px; opacity: 80%;"> </i> &nbsp; My favourites </a>
+            <a href=""> <i class="fa-regular fa-heart" style="font-size: 23px; opacity: 80%;"> </i> &nbsp; My favourites
+            </a>
             <a href=""> Log in </a>
             <a> Menu &nbsp; <i class="fa-solid fa-chevron-down"></i> </a>
             <a> INR &nbsp; <i class="fa-solid fa-chevron-down"></i> </a>
         </div>
     </div>
+
+    <div id="search_bar">
+          <input id="search" type="text" placeholder="Enter a hotel name or destination">
+          <button id="btn">click</button>
+    </div>
+
+    <div id="sorting">
+
+    </div>
+
+    <div id="map">
+
+    </div>
+
+    <div id="main_data">
+        <div id="left">
+            <div id="left_top">
+                <p style="font-weight: bold;">Sort by</p>
+                <div id="select">
+                        <select id="sb">
+                            <option value="OR">Our recommendations</option>
+                            <option value="RR">Rating & Recommended</option>
+                            <option value="PR">Price & Recommended</option>
+                            <option value="DR">Distance & Recommended</option>
+                            <option value="Rating only">Rating only</option>
+                            <option value="PO">Price only</option>
+                            <option value="DO">Distance only</option>
+                        </select>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="pointer-events-none max-h-full max-w-full"><circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M12 11v6" vector-effect="non-scaling-stroke"/><circle cx="12" cy="7" r="1" fill="currentColor"/></svg>
+                </div>
+                <div id="stay">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="pointer-events-none max-h-full max-w-full"><path d="M21.5 7H14V3.62a.51.51 0 10-1 0V5h-2V3.62a.57.57 0 00-.5-.62.57.57 0 00-.5.62V7H2.5a.46.46 0 00-.5.43v2.14a.46.46 0 00.5.43H5v10H3.47a.5.5 0 000 1h17.06a.5.5 0 000-1H19V10h2.5a.46.46 0 00.5-.43V7.43a.46.46 0 00-.5-.43zM3 9V8h18v1zm8-3h2v1h-2zm-1 14v-5h4v5zm8 0h-3v-5a1 1 0 00-1-1h-4a1 1 0 00-1 1v5H6V10h12z" fill="currentColor"/></svg>
+                    <p>Stays found: <span id="staycount"></span></p>
+                </div>
+                <div id="sitecount">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="pointer-events-none max-h-full max-w-full"><g fill="currentColor"><path d="M3 8V6a1 1 0 011-1h16a1 1 0 011 1v2zm18 10a1 1 0 01-1 1H4a1 1 0 01-1-1V9h18zM20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2z"/><path d="M13.5 7h-8a.5.5 0 010-1h8a.5.5 0 010 1z"/></g></svg>
+                    <p>Booking sites searched: <span id="bs">162</span></p>
+                </div>
+            </div>
+            <div id="items">
+
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>

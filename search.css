@@ -2,6 +2,7 @@
     font-family: system-ui;
 }
 
+/* ************************navbar************************* */
 #navbar {
     top: 0;
     left: 0;
@@ -43,4 +44,51 @@
 
 #navlist a:hover {
     background-color: rgb(243, 243, 243);
+}
+/* ***************************search********************************** */
+#search_bar{
+    margin-top: 6%;
+}
+/* *****************************main data*************************** */
+#left_top{
+    display: flex;
+    align-items: center;
+}
+#select{
+    border: 1px solid gray;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5px;
+    width: 250px;
+
+}
+#sb{
+   height: 100%;
+   width: 90%;
+   padding: 6px;
+   border: none;
+   border-right: 1px solid gray;
+}
+#stay{
+    display: flex;
+    align-items: center;
+    margin-left: 100px;
+}
+
+#sitecount{
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+}
+#bs,#staycount{
+    font-weight: 700;
+    background-color: #dbdde1;
+    border-radius: 3px;
+   
+}
+#left{
+    background-color: #f3f4f5;
+    padding: 10px;
 }
