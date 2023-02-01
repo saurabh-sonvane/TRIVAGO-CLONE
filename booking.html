@@ -6,9 +6,108 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title> Booking </title>
         <link rel="stylesheet" href="./booking.css">
+        <link rel="stylesheet" href="./modules/navbar.css">
+        <script src="https://kit.fontawesome.com/5fc882c95a.js" crossorigin="anonymous"> </script>
     </head>
     <body>
+        <div id="navbar">
+
+        </div>
+
+        <div id="main">
+
+            <div id="hotelDetails">
+
+                <div id="head">
+                    
+                </div>
+
+                <div id="center">
+                    <h2 id="name"> </h2>
+                    <p id="desc" style="opacity: 80%;"> </p>
+                    <div> <div id="rating"> </div> <div id="all"> </div> </div>
+                    <p> <span> 1 </span> Night </p>
+                </div>
+
+                <div id="bottom">
+                    <div id="duration">
+                        <h4> 1st Feb to 2nd Feb </h4>
+                        <h4 style="font-weight: lighter;"> 1 Room, 2 Guests </h4>
+                    </div>
+
+                    <p><i class="fa-solid fa-door-open"></i> Classic </p>
+
+                    <div id="prices">
+                        <p> Room price for 1 Night X 2 Guests </p>
+                        <p id="price1"> ₹960 </p>
+                        <p> Discount 5% </p>
+                        <p id="discount"> -250 </p>
+                        <p> 20% Coupon applied </p>
+                        <p id="coupon"> -100 </p>
+                        <p> Trivago Membership </p>
+                        <p> ₹100 </p>
+                    </div>
+
+                    <div id="lastbill">
+                        <div>
+                            <h3 style="line-height: 0px;"> Payable Amount </h3>
+                            <h5 style="font-weight: lighter;"> inclusive of all taxes </h5>
+                        </div>
+                        <div> <h2 id="total">₹500</h2></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="customerDetails">
+
+                <div>
+                    <div id="heading">
+                        <div> <span id="numdec"> 1 </span> Enter your details </div>
+                    </div>
+
+                    <div id="ext">
+                        <div id="user_details"> 
+                            <p> We will use these details to share your booking information </p>
+                            <div id="primary"> 
+                                <div>
+                                    <label for=""> Full Name </label>
+                                    <input type="text" placeholder="Enter first and last name" id="userName">
+                                </div>
+                                <div>
+                                    <label for=""> Phone Number </label>
+                                    <input type="number" placeholder="Enter your phone no." id="userPhone">
+                                </div>
     
+                                <div id="emailVerify">
+                                    <label for=""> Email Address </label>
+                                    <input type="email" placeholder="Enter your email address" id="userEmail">
+                                    <br>
+                                    <input type="submit" value="Send OTP" id="otpButton">
+                                </div>
+    
+                                <div id="otp">
+                                    <label for=""> Enter OTP </label>
+                                    <input type="number" placeholder="Enter your OTP" id="otpValue">
+                                    <br>
+                                    <input type="submit" value="Verify" id="otpVerify">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div style="margin-top: 20px;" id="paymentDetails">
+                    <div id="heading" style="border-radius: 0px;">
+                        <div>
+                            <span id="numdec"> 2 </span> Complete your booking &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+                            <i style="color: green;" class="fa-solid fa-lock"> </i> 100% secure payments
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
     </body>
-    <script src="./booking.js"> </script>
+    <script type="module" src="./booking.js"> </script>
 </html>

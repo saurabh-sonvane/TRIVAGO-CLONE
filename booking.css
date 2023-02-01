@@ -1,0 +1,173 @@
+
+* {
+    font-family: system-ui;
+    letter-spacing: 2px;
+}
+
+#main {
+    width: 1330px;
+    margin: 120px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+#hotelDetails {
+    border: 1px solid #e6e6e6;
+    border-radius: 10px;
+    width: 500px;
+}
+
+#head {
+    height: 250px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+#head img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.slide {
+    animation-name: slideImage;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+}
+
+@keyframes slideImage {
+    from {
+        transform:scale(1.50);
+        opacity: 40%;
+    }
+
+    to {
+        opacity: 100%;
+    }
+}
+
+#center {
+    padding: 10px 20px 0px 20px;
+}
+
+#center div {
+    display: flex;
+    gap: 20px;
+}
+
+#rating {
+    background-color: #d6e2fa;
+    padding: 2px 10px 2px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: black;
+}
+
+#bottom {
+    padding: 0px 20px;
+}
+
+#duration {
+    display: flex;
+    gap: 20px;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+#prices {
+    white-space: nowrap;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 90px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e6e6e6;
+
+}
+
+#prices p {
+    margin-bottom: 0px;
+}
+
+#lastbill {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 20px;
+}
+
+
+#customerDetails {
+    border: 1px solid #e6e6e6;
+    border-radius: 10px;
+    height: 850px;
+    width: 800px;
+}
+
+#heading {
+    padding: 20px 0px 20px 20px;
+    font-size: 20px;
+    font-weight:600;
+    background-color: #e6e6e6;
+    border-radius: 8px 8px 0px 0px;
+}
+
+#numdec {
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    padding: 4px 4px 4px 13px;
+    margin-right: 10px;
+}
+
+#user_details {
+    padding: 10px 20px;
+}
+
+#primary {
+    display: grid;
+    /* justify-content: space-between; */
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 100px;
+    row-gap: 20px;
+}
+
+#primary div {
+    display: grid;
+}
+
+#primary label {
+    font-weight: bold;
+    padding-bottom: 8px;
+    padding-left: 3px;
+    font-size: 20px;
+}
+
+#primary input {
+    height: 60px;
+    padding-left: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color:whitesmoke;
+}
+
+#primary input[type="submit"] {
+    background-color: black;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#primary #otp {
+    display: none;
+}
+
+#yourDetails {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
+    font-weight: 500;
+}
+
+
+#paymentDetails {
+    opacity: 50%;
+}
