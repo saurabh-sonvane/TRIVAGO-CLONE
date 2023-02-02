@@ -9287,153 +9287,158 @@ var hotels = [
     }
 
 ]
-document.getElementById("btn").addEventListener("click", function(){
+document.getElementById("btn").addEventListener("click", function () {
     display(hotels);
 })
-document.getElementById("sb").addEventListener("change",function(){
-    var ch=document.getElementById("sb").value;
-    if(ch==="OR"){
+document.getElementById("sb").addEventListener("change", function () {
+    var ch = document.getElementById("sb").value;
+    if (ch === "OR") {
         display(hotels);
-    }else if(ch==="RR" ||ch==="Rating only"){
-            var h=hotels.sort((a,b)=>{
-                return Number(b.rating.overall)-Number(a.rating.overall);
-            });
-            display(h);
-    }else if(ch==="PR" ||ch==="PO"){
-        var h=hotels.sort((a,b)=>{
-            if(Number(a.bookingCost)>Number(b.bookingCost)){
+    } else if (ch === "RR" || ch === "Rating only") {
+        var h = hotels.sort((a, b) => {
+            return Number(b.rating.overall) - Number(a.rating.overall);
+        });
+        display(h);
+    } else if (ch === "PR" || ch === "PO") {
+        var h = hotels.sort((a, b) => {
+            if (Number(a.bookingCost) > Number(b.bookingCost)) {
                 return 1;
-            }else{
+            } else {
                 return -1;
             }
         });
         display(h);
-    }else if(ch==="DR" ||ch==="DO"){
-        var h=hotels.sort((a,b)=>{
-            if(Number(a.distance)>Number(b.distance)){
+    } else if (ch === "DR" || ch === "DO") {
+        var h = hotels.sort((a, b) => {
+            if (Number(a.distance) > Number(b.distance)) {
                 return 1;
-            }else{
+            } else {
                 return -1;
             }
         });
         display(h);
     }
 })
-var to=0;
+var to = 0;
 function display(arr) {
-    to=0
+    request();
+    to = 0
     var city = document.getElementById("search").value;
     let result = city.toUpperCase();
     document.getElementById("items").innerHTML = "";
     arr.map(function (elem, index) {
         var res = elem.hotelLocation.toUpperCase();
         if (result === res) {
-            to+=1;
+            to += 1;
             var divv = document.createElement("div");
             divv.setAttribute("class", "item");
 
             var imdiv = document.createElement("div");
             var im = document.createElement("img");
-            im.setAttribute("class","ig");
+            im.setAttribute("class", "ig");
             im.src = elem.hotelThumbnail;
-            imdiv.append(im);
+            var imgdiv = document.createElement("div");
+            imgdiv.setAttribute("class", "text");
+            imgdiv.textContent = "View images";
+            imdiv.append(im, imgdiv);
+
 
 
             var detaildiv = document.createElement("div");
-            detaildiv.setAttribute("class","detail");
+            detaildiv.setAttribute("class", "detail");
 
             var namediv = document.createElement("div");
             namediv.setAttribute("class", "namediv");
             var name = document.createElement("h4");
             name.textContent = elem.hotelName;
             var heart = document.createElement("div");
-            heart.setAttribute("class","heart");
+            heart.setAttribute("class", "heart");
             heart.innerHTML = '<svg width="28" height="28" viewBox="0 0 24 24" class="hover:text-red-800 cursor-pointer"><path d="M20.42 4.82A5.23 5.23 0 0016.5 3 5.37 5.37 0 0012 5.58 5.37 5.37 0 007.5 3a5.23 5.23 0 00-3.92 1.82A6.35 6.35 0 002 9.07v.28c0 5.42 7.25 10.18 9.47 11.51a1 1 0 001 0C14.74 19.53 22 14.77 22 9.35v-.22-.06a6.35 6.35 0 00-1.58-4.25zM21 9.18v.17c0 4.94-7.07 9.5-9 10.65-1.92-1.15-9-5.71-9-10.65v-.17a.41.41 0 000-.11A4.81 4.81 0 017.5 4a4.39 4.39 0 013.66 2.12L12 7.44l.84-1.32A4.39 4.39 0 0116.5 4 4.81 4.81 0 0121 9.07a.41.41 0 000 .11z" fill="currentColor"/></svg>';
             namediv.append(name, heart);
 
             var p = document.createElement("p");
-            p.style.cursor="pointer";
-            p.style.marginTop="-15px";
+            p.style.cursor = "pointer";
+            p.style.marginTop = "-15px";
             var sp = document.createElement("span");
             sp.setAttribute("class", "star");
-            var q= Number(Math.ceil(Number(elem.rating.overall)/2));
+            var q = Number(Math.ceil(Number(elem.rating.overall) / 2));
 
-            for (let i = 0; i < q; i++) { 
-                sp.innerHTML +='<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" class="pointer-events-none max-h-full max-w-full"><path d="M12 5.21a.65.65 0 00-.55-.53l-3.6-.6L6.63.46a.66.66 0 00-1.26 0L4.16 4.08l-3.6.6a.65.65 0 00-.56.53.66.66 0 00.31.69L3.2 7.63 2 11.12a.67.67 0 00.26.76.64.64 0 00.38.12.65.65 0 00.41-.15L6 9.52l2.92 2.33a.65.65 0 00.41.15.64.64 0 00.38-.12.67.67 0 00.26-.76L8.8 7.63l2.88-1.73a.66.66 0 00.32-.69z" fill="#fc9e15"/></svg>'
+            for (let i = 0; i < q; i++) {
+                sp.innerHTML += '<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" class="pointer-events-none max-h-full max-w-full"><path d="M12 5.21a.65.65 0 00-.55-.53l-3.6-.6L6.63.46a.66.66 0 00-1.26 0L4.16 4.08l-3.6.6a.65.65 0 00-.56.53.66.66 0 00.31.69L3.2 7.63 2 11.12a.67.67 0 00.26.76.64.64 0 00.38.12.65.65 0 00.41-.15L6 9.52l2.92 2.33a.65.65 0 00.41.15.64.64 0 00.38-.12.67.67 0 00.26-.76L8.8 7.63l2.88-1.73a.66.66 0 00.32-.69z" fill="#fc9e15"/></svg>'
             }
-            let tittle=" "+elem.hotelType;
-            sp.innerHTML+=tittle;
-            sp.style.fontSize="14px";
+            let tittle = " " + elem.hotelType;
+            sp.innerHTML += tittle;
+            sp.style.fontSize = "14px";
             p.append(sp);
-      
+
 
             var kmdiv = document.createElement("div");
-            kmdiv.setAttribute("class","km");
+            kmdiv.setAttribute("class", "km");
             var p2 = document.createElement("p");
             var sp2 = document.createElement("span");
-            sp2.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="pointer-events-none max-h-full max-w-full"><g fill="currentColor"><path d="M12 5a4 4 0 104 4 4 4 0 00-4-4zm0 7a3 3 0 113-3 3 3 0 01-3 3z"/><path d="M18 8.23a6 6 0 00-11.9 0A6.49 6.49 0 006 9a5.79 5.79 0 00.38 2.09L7 12.28l4.15 8.21a1 1 0 001.74 0L17 12.28l.6-1.19A5.79 5.79 0 0018 9a6.49 6.49 0 000-.77zM12 20l-4.7-9.31A4.77 4.77 0 017 9a4.88 4.88 0 010-.64 5 5 0 019.92 0A5.14 5.14 0 0117 9a4.77 4.77 0 01-.3 1.69z"/></g></svg>';
+            sp2.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="pointer-events-none max-h-full max-w-full"><g fill="currentColor"><path d="M12 5a4 4 0 104 4 4 4 0 00-4-4zm0 7a3 3 0 113-3 3 3 0 01-3 3z"/><path d="M18 8.23a6 6 0 00-11.9 0A6.49 6.49 0 006 9a5.79 5.79 0 00.38 2.09L7 12.28l4.15 8.21a1 1 0 001.74 0L17 12.28l.6-1.19A5.79 5.79 0 0018 9a6.49 6.49 0 000-.77zM12 20l-4.7-9.31A4.77 4.77 0 017 9a4.88 4.88 0 010-.64 5 5 0 019.92 0A5.14 5.14 0 0117 9a4.77 4.77 0 01-.3 1.69z"/></g></svg>';
             sp2.innerHTML += elem.distance;
-            sp2.innerHTML+=" Km to City centre";
+            sp2.innerHTML += " Km to City centre";
             p2.append(sp2);
-            
+
             var logodiv = document.createElement("div");
             logodiv.innerHTML = '<svg fill="#000000" height="12px" width="12px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"viewBox = "0 0 330 330" xml: space = "preserve" ><path id="XMLID_225_" d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"/></svg >';
-            kmdiv.append(p2,logodiv);
+            kmdiv.append(p2, logodiv);
 
-            var ratediv=document.createElement("div");
-            ratediv.setAttribute("class","ratelogo1");
-            var p3=document.createElement("p");
-            var sp3=document.createElement("span");
-            var sp4=document.createElement("span");
-            var sp5=document.createElement("span");
-        
-            var x= Number(elem.rating.overall);
-            if(x>8.5){
-                sp4.innerHTML+=" Excellent";
-                sp3.style.background="#005f00";
-            }else if(x>8){
-                sp4.innerHTML+=" Very Good";
-                sp3.style.background="#028000";
-            }else if(x>7.5){
-                sp4.innerHTML+=" Good";
-                sp3.style.background="#62a30f";
-            }else{
-                sp4.innerHTML+=" Good";
-                sp3.style.background="#fc9e15"; 
+            var ratediv = document.createElement("div");
+            ratediv.setAttribute("class", "ratelogo1");
+            var p3 = document.createElement("p");
+            var sp3 = document.createElement("span");
+            var sp4 = document.createElement("span");
+            var sp5 = document.createElement("span");
+
+            var x = Number(elem.rating.overall);
+            if (x > 8.5) {
+                sp4.innerHTML += " Excellent";
+                sp3.style.background = "#005f00";
+            } else if (x > 8) {
+                sp4.innerHTML += " Very Good";
+                sp3.style.background = "#028000";
+            } else if (x > 7.5) {
+                sp4.innerHTML += " Good";
+                sp3.style.background = "#62a30f";
+            } else {
+                sp4.innerHTML += " Good";
+                sp3.style.background = "#fc9e15";
             }
-            sp3.innerHTML=x;
-            sp3.style.fontSize="12px";
-            sp3.style.padding="3px";
-            sp3.style.color="white";
-            sp3.style.borderRadius="7px";
-            sp3.style.fontWeight="bold";
-            sp5.innerHTML=" ("+elem.review+" reviews)";
-            sp4.style.fontSize="14px";
-            sp4.style.fontWeight="bold";
-         
-            p3.append(sp3,sp4,sp5);
+            sp3.innerHTML = x;
+            sp3.style.fontSize = "12px";
+            sp3.style.padding = "3px";
+            sp3.style.color = "white";
+            sp3.style.borderRadius = "7px";
+            sp3.style.fontWeight = "bold";
+            sp5.innerHTML = " (" + elem.review + " reviews)";
+            sp4.style.fontSize = "14px";
+            sp4.style.fontWeight = "bold";
+
+            p3.append(sp3, sp4, sp5);
             var logodiv2 = document.createElement("div");
             logodiv2.innerHTML = '<svg fill="#000000" height="12px" width="12px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"viewBox = "0 0 330 330" xml: space = "preserve" ><path id="XMLID_225_" d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"/></svg >';
-            ratediv.append(p3,logodiv2);
+            ratediv.append(p3, logodiv2);
 
-          var hh1=document.createElement("hr");
-            hh1.setAttribute("class","hr");
+            var hh1 = document.createElement("hr");
+            hh1.setAttribute("class", "hr");
             // var hh2=document.createElement("hr");
             // hh2.setAttribute("class","hp");
 
-            detaildiv.append(namediv,p,hh1,kmdiv,hh1,ratediv);
+            detaildiv.append(namediv, p, hh1, kmdiv, hh1, ratediv);
 
 
-            var bookingdiv=document.createElement("div");
+            var bookingdiv = document.createElement("div");
 
-            var div1=document.createElement("div");
-            div1.setAttribute("class","pricediv");
+            var div1 = document.createElement("div");
+            div1.setAttribute("class", "pricediv");
 
-            var pb=document.createElement("p");
-            pb.innerText="Booking.com";
-            pb.style.fontSize="12px";
-            pb.style.marginBottom="-10px";
-            pb.style.fontWeight="bold";
+            var pb = document.createElement("p");
+            pb.innerText = "Booking.com";
+            pb.style.fontSize = "12px";
+            pb.style.marginBottom = "-10px";
+            pb.style.fontWeight = "bold";
 
             // var pb2=document.createElement("p");
             // var sb=document.createElement("span");
@@ -9442,96 +9447,115 @@ function display(arr) {
             // sb2.textContent="Free cancellation";
             // pb2.innerHTML=sb+sb2+"Pay at the property";
 
-            var ppdiv=document.createElement("div");
-            ppdiv.style.marginTop="7px";
-            var sb=document.createElement("span");
-             sb.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" class="pointer-events-none max-h-full max-w-full"><circle cx="12" cy="12" r="10" fill="#005f00"/><g fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"><path vector-effect="non-scaling-stroke" d="M17 9l-7 7M10 16l-3-3"/></g></svg> ';
-             sb2=document.createElement("span");
-             sb2.innerHTML=" Free cancellation. ";
-             sb2.style.fontSize="12px";
-             sb2.style.color='#005f00';
-             sb2.style.fontWeight="800";
-            sb3=document.createElement("span");
-            sb3.innerHTML=" Pay at the property";
-            sb3.style.fontSize="12px";
-            sb3.style.color='#005f00';
+            var ppdiv = document.createElement("div");
+            ppdiv.style.marginTop = "7px";
+            var sb = document.createElement("span");
+            sb.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" class="pointer-events-none max-h-full max-w-full"><circle cx="12" cy="12" r="10" fill="#005f00"/><g fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"><path vector-effect="non-scaling-stroke" d="M17 9l-7 7M10 16l-3-3"/></g></svg> ';
+            sb2 = document.createElement("span");
+            sb2.innerHTML = " Free cancellation. ";
+            sb2.style.fontSize = "12px";
+            sb2.style.color = '#005f00';
+            sb2.style.fontWeight = "800";
+            sb3 = document.createElement("span");
+            sb3.innerHTML = " Pay at the property";
+            sb3.style.fontSize = "12px";
+            sb3.style.color = '#005f00';
 
-            ppdiv.append(sb,sb2,sb3);
+            ppdiv.append(sb, sb2, sb3);
 
-            var pdiv=document.createElement("div");
-            pdiv.setAttribute("class","pdiv");
+            var pdiv = document.createElement("div");
+            pdiv.setAttribute("class", "pdiv");
 
-            var pdv=document.createElement("div");
-            var pprice=document.createElement("h3");
-            pprice.innerHTML="₹"+elem.bookingCost;
-            pprice.style.color='#005f00';
-            var pp=document.createElement("p");
-            pp.innerHTML="per night";
-            pp.style.marginTop="-10px";
-            pp.style.fontSize="12px";
-            pdv.append(pprice,pp);
+            var pdv = document.createElement("div");
+            var pprice = document.createElement("h3");
+            pprice.innerHTML = "₹" + elem.bookingCost;
+            pprice.style.color = '#005f00';
+            var pp = document.createElement("p");
+            pp.innerHTML = "per night";
+            pp.style.marginTop = "-10px";
+            pp.style.fontSize = "12px";
+            pdv.append(pprice, pp);
 
-            var make=document.createElement("button");
-            make.setAttribute("class","book");
-            make.innerHTML="Book Now "+`&nbsp`+">";
-
-
-
-            pdiv.append(pdv,make);
-            div1.append(pb,ppdiv,pdiv)
-
-            var ldiv=document.createElement("div");
-            ldiv.setAttribute("class","ldiv");
-
-            var cdiv1=document.createElement("div");
-            cdiv1.setAttribute("class","div1");
-            var pp1=document.createElement("p");
-            var pp2=document.createElement("p");
-            var pp3=document.createElement("p");
-
-            pp1.innerText="Booking.com";
-            pp1.style.fontSize="12px";
-            pp1.style.fontWeight="bold";
-            pp1.style.marginTop="-14px";
-            pp2.innerText="₹"+(Number(elem.bookingCost)+500);
-            pp2.style.marginTop="-13px";
-            pp2.style.marginBottom="-13px";
-            pp2.style.fontSize="14px";
-            pp2.style.fontWeight="bold";
-            pp3.innerText="per night";
-            pp3.style.marginBottom="-2px";
-            pp3.style.fontSize="12px";
-            cdiv1.append(pp1,pp2,pp3);
-
-            var cdiv2=document.createElement("div");
-            cdiv2.setAttribute("class","div2");
-            var pp11=document.createElement("p");
-            var pp22=document.createElement("p");
-            var pp33=document.createElement("p");
-
-            pp11.innerText="Our lowest price";
-            pp11.style.fontWeight="bold";
-            pp11.style.fontSize="12px";
-            pp11.style.marginTop="-15px";
-            pp22.innerText="₹"+elem.bookingCost;
-            pp22.style.marginTop="-13px";
-            pp22.style.marginBottom="-13px";
-            pp22.style.fontSize="14px";
-            pp22.style.fontWeight="bold";
-            pp33.innerText="per night";
-            pp33.style.fontSize="12px";
-            pp33.style.marginBottom="-2px";
-            cdiv2.append(pp11,pp22,pp33);
-
-            ldiv.append(cdiv1,cdiv2);
-            bookingdiv.append(div1,ldiv);
+            var make = document.createElement("button");
+            make.setAttribute("class", "book");
+            make.innerHTML = "Book Now " + `&nbsp` + ">";
 
 
-            divv.append(imdiv,detaildiv,bookingdiv);
+
+            pdiv.append(pdv, make);
+            div1.append(pb, ppdiv, pdiv)
+
+            var ldiv = document.createElement("div");
+            ldiv.setAttribute("class", "ldiv");
+
+            var cdiv1 = document.createElement("div");
+            cdiv1.setAttribute("class", "div1");
+            var pp1 = document.createElement("p");
+            var pp2 = document.createElement("p");
+            var pp3 = document.createElement("p");
+
+            pp1.innerText = "Booking.com";
+            pp1.style.fontSize = "12px";
+            pp1.style.fontWeight = "bold";
+            pp1.style.marginTop = "-14px";
+            pp2.innerText = "₹" + (Number(elem.bookingCost) + 500);
+            pp2.style.marginTop = "-13px";
+            pp2.style.marginBottom = "-13px";
+            pp2.style.fontSize = "14px";
+            pp2.style.fontWeight = "bold";
+            pp3.innerText = "per night";
+            pp3.style.marginBottom = "-2px";
+            pp3.style.fontSize = "12px";
+            cdiv1.append(pp1, pp2, pp3);
+
+            var cdiv2 = document.createElement("div");
+            cdiv2.setAttribute("class", "div2");
+            var pp11 = document.createElement("p");
+            var pp22 = document.createElement("p");
+            var pp33 = document.createElement("p");
+
+            pp11.innerText = "Our lowest price";
+            pp11.style.fontWeight = "bold";
+            pp11.style.fontSize = "12px";
+            pp11.style.marginTop = "-15px";
+            pp22.innerText = "₹" + elem.bookingCost;
+            pp22.style.marginTop = "-13px";
+            pp22.style.marginBottom = "-13px";
+            pp22.style.fontSize = "14px";
+            pp22.style.fontWeight = "bold";
+            pp33.innerText = "per night";
+            pp33.style.fontSize = "12px";
+            pp33.style.marginBottom = "-2px";
+            cdiv2.append(pp11, pp22, pp33);
+
+            ldiv.append(cdiv1, cdiv2);
+            bookingdiv.append(div1, ldiv);
+
+
+            divv.append(imdiv, detaildiv, bookingdiv);
             document.getElementById("items").append(divv);
-            document.getElementById("staycount").textContent=to;
+            document.getElementById("staycount").textContent = to;
 
         }
 
     })
 }
+// ***********************map*********************
+
+$(".ig").hover(function () {
+    $(".text").fadeIn();
+}, function () {
+    $(".text").fadeOut();
+});
+
+async function request() {
+    var city = document.getElementById("search").value;
+    let res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=28374a44f2f611a1e60c78f789a9f84e`)
+    let data = await res.json();
+
+     document.getElementById("gmap_canvas").src = `https://maps.google.com/maps?q=${city}&t=&z=13&ie=UTF8&iwloc=&output=embed`
+
+}
+
+// ****************************price slider*************************
+    
