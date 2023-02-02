@@ -1,0 +1,44 @@
+* {
+    font-family: system-ui;
+}
+
+#top {
+    width: 500px;
+    margin: 120px 0px 0px 32%;
+}
+
+#top h1 {
+    line-height: 2px;
+}
+
+#top p {
+    font-size: 17px;
+}
+
+#top img {
+    width: 100%;
+}
+
+#top button {
+    height: 45px;
+    width: 150px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    background-color: #007cc2;
+    border-radius: 9px;
+    font-size: 17px;
+}
+
+#activity {
+    margin: 30px 0px 0px 32%;
+}
+
+#activity p {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+#list {
+    border: 1px solid black;
+}
