@@ -1,0 +1,161 @@
+* {
+    font-family: system-ui;
+}
+
+#navbar {
+    top: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    display: flex;
+    border-bottom: 1px solid rgb(202, 200, 200);
+    height: 70px;
+    z-index: 1;
+    background-color: white;
+}
+
+#navbar div {
+    width: 50%;
+}
+
+#navbar div img {
+    width: 125px;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 100%;
+    padding-left: 30px;
+}
+
+#navlist {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#navlist a {
+    text-decoration: none;
+    color: black;
+    padding-top: 25px;
+    padding-left: 30px;
+    padding-right: 25px;
+    white-space: nowrap;
+    font-size: 15px;
+}
+
+#navlist a:hover {
+    background-color: rgb(243, 243, 243);
+}
+
+/*             ------------------              Navbar end               ------------------------------------ */
+
+#parent{
+    display: flex;
+    margin-top: 6%;
+    justify-content: center;
+    
+}
+#sidebar{
+/* border: 1px solid red; */
+margin-top: -1%;
+width:12%;
+margin-right: 5%;
+margin-left: -3%;
+
+}
+.backicon {
+  position: relative;  
+  top: 42px;
+  color: #3398f1;
+}
+#sidebar>div{
+    padding:8%;  
+}
+
+#sidebar>div>a{
+    color: #4f6a7e; 
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 400;
+    word-spacing: 0.1em;
+}
+
+#accountSettingsdiv2{
+    display: flex;
+    gap: 10px;
+} 
+#sidebar>div>a:hover{
+    text-decoration-line: underline;
+}
+hr.style11{
+    height: 2px;
+	border: 0;
+	box-shadow: 0 10px 10px -10px #e2dfdf inset; 
+}
+
+#mainbar{
+    width: 39%;
+    height: max-content;
+    margin-left: -2%;
+    margin-top: -1%;
+    margin-right: 2%;
+}
+#mainbar>h1{
+    font-size: 40px;
+    
+}
+
+#selectionOfTopic{
+  margin-top: -5%;
+   padding-left: 10%;
+}
+.design{
+    position: relative;
+    top: 50px;
+  right: 65px;
+   
+}
+label{
+    font-weight: 600;
+    margin-left: -8%;
+}
+
+select{
+    width: 100%;
+    padding: 15px ;
+    margin: 8px 0;
+    outline: 0;
+    display: inline-block;
+    border: 2px solid #c7cad0;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 18px;
+    font-weight: 450;
+  }
+  @media screen and  (min-width: 768px) and (max-width: 1024px) {
+    #sidebar {
+        display:none;
+    }
+    #navbar{
+        display: none;
+    }
+   
+    #mainbar{
+        margin-top: -10%;
+    width: 90%;
+    }
+   
+ }
+ @media screen and  (min-width: 480px) and (max-width: 768px) {
+    #sidebar {
+        display:none;
+    }
+    #navbar{
+        display: none;
+    }
+   
+    #mainbar{
+        margin-top: -10%;
+    width: 90%;
+    }
+          
+   
+ }
