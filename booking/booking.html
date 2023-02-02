@@ -59,7 +59,6 @@
             </div>
 
             <div id="customerDetails">
-
                 <div>
                     <div id="heading">
                         <div> <span id="numdec"> 1 </span> Enter your details </div>
@@ -104,10 +103,50 @@
                             <i style="color: green;" class="fa-solid fa-lock"> </i> 100% secure payments
                         </div>
                     </div>
+
+                    <div id="paymentOptions">
+                        <div class="setBlue" id="opt1"> <h4> Pay at Hotel </h4> </div>
+                        <div class="setSmoke" id="opt2"> <h4> Pay Now </h4> </div>
+                    </div>
+
+                    <div id="pay">
+
+                    </div>
                 </div>
-                
             </div>
         </div>
     </body>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"> </script>
+    <script src="https://smtpjs.com/v3/smtp.js"> </script>
     <script type="module" src="./booking.js"> </script>
+
+    <script>
+        async function otpRequest(OTP,email) {
+            let status = 0;
+            try {
+                let response = await Email.send({
+                    Host: "smtp.elasticemail.com",
+                    Username:"trivago.verify45@gmail.com",
+                    Password:"BA3EA10909EC1121A81021DF4632399BE5CB",
+                    To: email,
+                    From: "trivago.verify45@gmail.com",
+                    Subject: "Email varifivation",
+                    Body: "Your OTP is " + OTP + ". Please use this OTP to verify your Email"
+                });
+
+                if(response == "OK") {
+                    status = 200;
+                } else {
+                    status = 404;
+                }
+
+            } catch(error) {
+                console.log(error);
+                status = 404;
+            }
+           
+
+            return status;
+        }
+    </script>
 </html>

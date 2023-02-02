@@ -96,8 +96,9 @@
 #customerDetails {
     border: 1px solid #e6e6e6;
     border-radius: 10px;
-    height: 850px;
     width: 800px;
+    height: 900px;
+    padding-bottom: 30px;
 }
 
 #heading {
@@ -109,7 +110,7 @@
 }
 
 #numdec {
-    background-color: black;
+    background-color: #007cc2;
     color: white;
     border-radius: 10px;
     padding: 4px 4px 4px 13px;
@@ -122,7 +123,6 @@
 
 #primary {
     display: grid;
-    /* justify-content: space-between; */
     grid-template-columns: repeat(2,1fr);
     column-gap: 100px;
     row-gap: 20px;
@@ -148,7 +148,7 @@
 }
 
 #primary input[type="submit"] {
-    background-color: black;
+    background-color: #007cc2;
     color: white;
     font-size: 15px;
     font-weight: bold;
@@ -167,7 +167,97 @@
     font-weight: 500;
 }
 
-
 #paymentDetails {
     opacity: 50%;
+}
+
+#paymentOptions {
+    height: 100px;
+    margin-top: 20px;
+    display: none;
+    justify-content: center;
+    gap: 50px;
+}
+
+#paymentOptions div {
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 25px;
+    border-radius: 10px;
+}
+
+.setBlue {
+    background-color: #007cc2;
+    color: white;
+}
+
+.setSmoke {
+    background-color: whitesmoke;
+}
+
+#pay {
+    height: 60px;
+    text-align: center;
+}
+
+#final {
+    font-weight: bold;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+}
+
+#pay {
+    width: 42%;
+    margin: auto;
+}
+
+#pay input {
+    height: 40px;
+    padding-left: 10px;
+}
+
+.main{
+    width:210px;
+    height:210px;
+    border:5px solid black;
+    position:relative;
+    top:0; bottom:0; left:0;right:0;
+    margin:auto;
+    border-radius:50%; 
+}
+
+.main p {
+    text-align: center;
+    margin-top: 43%;
+    font-weight: bold;
+}
+  
+.circle{
+    width:20px;
+    height:20px;
+    background: #007cc2;
+    border-radius:50%;
+    position:absolute;
+    top:0; bottom:0; left:0;right:0;
+    overflow:hidden;
+    margin:auto;
+    animation: circle 2s linear infinite;
+}
+  
+@keyframes circle{
+    0% {
+        transform:rotate(0deg)
+        translate(-95px)
+        rotate(0deg);
+    
+    } 100% {
+        transform:rotate(360deg)
+        translate(-95px)
+        rotate(-360deg);
+    }
 }
