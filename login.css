@@ -5,6 +5,13 @@
     height:35px;
     margin-bottom: 10%;
 }
+#img2>img{
+height: 35px;
+
+}
+#img2>div>hr{
+    margin-bottom: 30px;
+}
 button:hover{
     background-color: grey;
     color: white;
@@ -38,6 +45,8 @@ button:hover{
     background-color:#007cc2; font-weight: 500; font-size: medium; color: white;
 
 }
+
+
 #input:hover{
     background-color: rgb(29, 20, 146);
 }
@@ -47,6 +56,13 @@ input{
     margin-bottom: 20px;
     margin-top: 10px;
     border-radius: 10px;
+}
+#back{
+    display: flex;
+    margin-right: 10px;
+}
+#back+div{
+    margin-right: 10px;
 }
 p>span{
     color:#007cc2;
