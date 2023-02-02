@@ -190,8 +190,39 @@
                 </svg>
               </button>
             </div>
-            <div class="part2">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            <div class="part2" style="display: flex; justify-content: space-evenly;align-items: center;">
+             <div class="part2_1 hov1"  style="display: flex;align-items: center; gap: 10px;">
+              <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="pointer-events-none max-h-full max-w-full"><g fill="currentColor"><path d="M19 5h-1a1 1 0 0 0-2 0H8a1 1 0 0 0-2 0H5a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm1 13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9h16zm0-10H4V7a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1z"/><circle cx="7.5" cy="12.5" r="1.5"/><path d="M19 5h-1a1 1 0 0 0-2 0H8a1 1 0 0 0-2 0H5a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm1 13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9h16zm0-10H4V7a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1z"/><circle cx="7.5" cy="12.5" r="1.5"/></g></svg>
+              </div>
+              <div style="display: flex;flex-direction: column;">
+                <p style=" font-size: 12px;">Check in</p>
+                <p style="margin-top: -12px;font-weight: 700; font-size: 12px;" class="checkIn">currDate</p>
+              </div>
+              <div style="display: flex;">
+                
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="pointer-events-none max-h-full max-w-full left_arrow"><path vector-effect="non-scaling-stroke" d="m10 17 5-5m-5-5 5 5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="pointer-events-none max-h-full max-w-full right_arrow"><path vector-effect="non-scaling-stroke" d="m10 17 5-5m-5-5 5 5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+              </div>
+             </div>
+             <input type="date" style="height: 20px;" class="calen1">
+             <div class="part2_2 hov2" style="display: flex;align-items: center; gap: 10px;">
+              <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="pointer-events-none max-h-full max-w-full"><g fill="currentColor"><path d="M19 5h-1a1 1 0 0 0-2 0H8a1 1 0 0 0-2 0H5a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm1 13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9h16zm0-10H4V7a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1z"/><circle cx="7.5" cy="12.5" r="1.5"/><path d="M19 5h-1a1 1 0 0 0-2 0H8a1 1 0 0 0-2 0H5a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm1 13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9h16zm0-10H4V7a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1z"/><circle cx="7.5" cy="12.5" r="1.5"/></g></svg>
+              </div>
+              <div style="display: flex;flex-direction: column;">
+                <p style=" font-size: 12px;">Check out</p>
+                <p style="margin-top: -12px;font-weight: 700; font-size: 12px;" class="chekOut">--/--/----</p>
+              </div>
+              <div style="display: flex;">
+                
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="pointer-events-none max-h-full max-w-full left_arrow"><path vector-effect="non-scaling-stroke" d="m10 17 5-5m-5-5 5 5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="pointer-events-none max-h-full max-w-full right_arrow"><path vector-effect="non-scaling-stroke" d="m10 17 5-5m-5-5 5 5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+              </div>
+             </div>
+              <input type="date" style="height: 20px;" class="calen2">
             </div>
             <div class="part3">
               <div>
@@ -200,46 +231,46 @@
                 <p class="guest_">Guests <span class="guests">1</span> </p>
                 <p class="room_">Rooms <span class="rooms">1</span></p>
               </div>
-              <div class="guestInfoDiv" >
-                <div style="display: flex; justify-content: space-between;">
-                  <p>Adults</p>
-                <div style="display: flex; justify-content: flex-end;gap: 10px;">
-                  <button class="dec_adults">-</button>
-                  <input type="number" value="1" class="input_adults">
-                  <button class="inc_adults">+</button>
-              </div>
             </div>
-                <div style="display: flex; justify-content: space-between;">
-                  <p>Childrens</p>
-                <div style="display: flex;justify-content: flex-end;gap: 10px;">
-                  <button class="dec_childrens">-</button>
-                  <input type="number" value="0" class="input_childrens">
-                  <button class="inc_childrens">+</button>
-              </div>
+            <div class="guestInfoDiv" >
+              <div style="display: flex; justify-content: space-between;">
+                <p>Adults</p>
+              <div style="display: flex; justify-content: flex-end;gap: 10px;">
+                <button class="dec_adults">-</button>
+                <input type="number" value="1" class="input_adults">
+                <button class="inc_adults" id="inc">+</button>
             </div>
-                <div style="display: flex; justify-content: space-between;">
-                  <p>Rooms</p>
-                <div style="display: flex;justify-content: flex-end;gap: 10px;">
-                  <button class="dec_rooms">-</button>
-                  <input type="number" value="1" class="input_rooms">
-                  <button class="inc_rooms">+</button>
-              </div>
+          </div>
+              <div style="display: flex; justify-content: space-between;">
+                <p>Childrens</p>
+              <div style="display: flex;justify-content: flex-end;gap: 10px;">
+                <button class="dec_childrens">-</button>
+                <input type="number" value="0" class="input_childrens">
+                <button class="inc_childrens">+</button>
             </div>
-                <hr style="border:1px solid grey; border:none; border-bottom:1px solid rgb(237,238,240);width:100%; margin: auto;">
-                <div style="display: flex; justify-content: space-between; align-items: center;">
-                  <div style="text-align: left;">
-                    <p>Pet Friendly</p>
-                    <p>Only show stays that allow pets</p>
-                  </div>
-                  <div>
-                    <input type="checkbox">
-                  </div>
+          </div>
+              <div style="display: flex; justify-content: space-between;">
+                <p>Rooms</p>
+              <div style="display: flex;justify-content: flex-end;gap: 10px;">
+                <button class="dec_rooms">-</button>
+                <input type="number" value="1" class="input_rooms">
+                <button class="inc_rooms">+</button>
+            </div>
+          </div>
+              <hr style="border:1px solid grey; border:none; border-bottom:1px solid rgb(237,238,240);width:100%; margin: auto;">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div style="text-align: left;">
+                  <p>Pet Friendly</p>
+                  <p>Only show stays that allow pets</p>
                 </div>
-                <hr style="border:1px solid grey; border:none; border-bottom:1px solid rgb(237,238,240);width:100%; margin: auto;">
-                <div style="display: flex; justify-content: space-between;">
-                  <button class="resetBtn">Reset</button>
-                  <button class="applyBtn">Apply</button>
+                <div>
+                  <input type="checkbox">
                 </div>
+              </div>
+              <hr style="border:1px solid grey; border:none; border-bottom:1px solid rgb(237,238,240);width:100%; margin: auto;">
+              <div style="display: flex; justify-content: space-between;">
+                <button class="resetBtn">Reset</button>
+                <button class="applyBtn">Apply</button>
               </div>
             </div>
             <div class="part4">
@@ -759,6 +790,7 @@
   </body>
 </html>
 <script src="./index.js"></script>
+<script src="./calender.js"></script>
 
 
 
