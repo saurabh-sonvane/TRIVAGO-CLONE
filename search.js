@@ -9287,13 +9287,45 @@ var hotels = [
     }
 
 ]
-// document.getElementById("btn").addEventListener("click", display);
+document.getElementById("btn").addEventListener("click", function(){
+    display(hotels);
+})
+document.getElementById("sb").addEventListener("change",function(){
+    var ch=document.getElementById("sb").value;
+    if(ch==="OR"){
+        display(hotels);
+    }else if(ch==="RR" ||ch==="Rating only"){
+            var h=hotels.sort((a,b)=>{
+                return Number(b.rating.overall)-Number(a.rating.overall);
+            });
+            display(h);
+    }else if(ch==="PR" ||ch==="PO"){
+        var h=hotels.sort((a,b)=>{
+            if(Number(a.bookingCost)>Number(b.bookingCost)){
+                return 1;
+            }else{
+                return -1;
+            }
+        });
+        display(h);
+    }else if(ch==="DR" ||ch==="DO"){
+        var h=hotels.sort((a,b)=>{
+            if(Number(a.distance)>Number(b.distance)){
+                return 1;
+            }else{
+                return -1;
+            }
+        });
+        display(h);
+    }
+})
 var to=0;
-function display() {
+function display(arr) {
+    to=0
     var city = document.getElementById("search").value;
     let result = city.toUpperCase();
     document.getElementById("items").innerHTML = "";
-    hotels.map(function (elem, index) {
+    arr.map(function (elem, index) {
         var res = elem.hotelLocation.toUpperCase();
         if (result === res) {
             to+=1;
