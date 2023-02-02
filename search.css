@@ -94,12 +94,96 @@
 }
 .item{
     display: flex;
+    margin-top: 10px;
+    background-color: white;
+    width: 60%;
+    height: 200px;
+   justify-content:space-between;
+   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+   padding: 5px;
+   border-radius: 10px;
+}
+.ig{
+    cursor: pointer;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+
 }
 .namediv{
     display: flex;
+    justify-content: space-between;
     align-items: center;
+    margin-top: -15px;
+    cursor: pointer;
 }
-.km,.ratelogo1{
+.km,.ratelogo1,.pdiv,.ldiv{
     display: flex;
     align-items: center;
+    gap: 30px;
+}
+.heart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.ratelogo1,.km{
+ justify-content: space-between;
+ margin-top: -18px;
+ cursor: pointer;
+}
+.book{
+    padding: 10px;
+    text-align: center;
+    color: white;
+    font-weight: 700;
+    background-color:#168a14;
+    border: none;
+    border-radius: 10px;
+    width: 130px;
+    cursor: pointer;
+}
+.pricediv{
+    background-color: #f1f8ea;
+    padding: 5px;
+    border-radius: 5px;
+    height: 120px;
+    cursor: pointer;
+}
+.km{
+    font-size: 14px;
+    margin-top: -10px;
+}
+.detail{
+    width: 48%;
+}
+.div1,.div2{
+    padding: 8px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    margin-top: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.hr{
+    height: 0.3px;
+	border: 0;
+	box-shadow: 0 10px 10px -10px #e2dfdf inset;
+}
+/* ***********************hover********************** */
+.div1:hover,.div2:hover{
+    background-color: #f1f8ea;
+}
+.km:hover,.ratelogo1:hover{
+    background-color: #f1f8ea;
+}
+.book:hover{
+    background-color:#005f00;
+}
+.heart:hover{
+    color: orange;
+}
+.pricediv:hover{
+    border: 0.1px solid #005f00 ;
+   
 }
