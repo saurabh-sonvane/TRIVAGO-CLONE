@@ -9321,12 +9321,15 @@ var to = 0;
 function display(arr) {
     request();
     to = 0
+    var from=document.getElementById("fromSlider").value;
+    var tot=document.getElementById("toSlider").value;
     var city = document.querySelector(".search").value;
     let result = city.toUpperCase();
     document.getElementById("items").innerHTML = "";
     arr.map(function (elem, index) {
         var res = elem.hotelLocation.toUpperCase();
-        if (result === res) {
+        var bookp=Number(elem.bookingCost);
+        if (result === res && bookp>=from && bookp<=tot ) {
             to += 1;
             var divv = document.createElement("div");
             divv.setAttribute("class", "item");
@@ -9820,3 +9823,61 @@ else {
 // set adultNo. childrenNo and roomNo as 1 , 0 , 1 by default 
 
 }
+
+
+// *******************sort slider******************
+function fun(){
+    display(hotels);
+}
+
+// ********************sort*******************
+
+document.getElementById("all").addEventListener("click",function(){
+    document.getElementById("all").style.backgroundColor="#e7f4fa";
+    document.getElementById("all").style.color="#1391d2";
+
+    document.getElementById("house").style.backgroundColor="#f9fafa";
+    document.getElementById("house").style.color="black";
+
+    document.getElementById("hotel").style.backgroundColor="#f9fafa";
+    document.getElementById("hotel").style.color="black";
+    display(hotels);
+});
+
+document.getElementById("hotel").addEventListener("click",function(){
+    document.getElementById("hotel").style.backgroundColor="#e7f4fa";
+    document.getElementById("hotel").style.color="#1391d2";
+
+    document.getElementById("all").style.backgroundColor="#f9fafa";
+    document.getElementById("all").style.color="black";
+
+    document.getElementById("house").style.backgroundColor="#f9fafa";
+    document.getElementById("house").style.color="black";
+
+    var hotel_arr=hotels.filter(function(item){
+        if(item.hotelType==="Hotel"){
+            return item;
+        }
+    })
+  
+    display(hotel_arr);
+});
+
+document.getElementById("house").addEventListener("click",function(){
+    document.getElementById("house").style.backgroundColor="#e7f4fa";
+    document.getElementById("house").style.color="#1391d2";
+
+    document.getElementById("all").style.backgroundColor="#f9fafa";
+    document.getElementById("all").style.color="black";
+
+    document.getElementById("hotel").style.backgroundColor="#f9fafa";
+    document.getElementById("hotel").style.color="black";
+
+    var hotel_arr=hotels.filter(function(item){
+        if(item.hotelType==="House/Apartment"){
+            return item;
+        }
+    })
+    
+    display(hotel_arr);
+});

@@ -60,6 +60,7 @@ body {
 
 /* *****************************main data*************************** */
 #main_data {
+    position: relative; 
     display: flex;
     width: 100%;
     gap: 10px;
@@ -71,7 +72,8 @@ body {
 }
 
 #right {
-   position: fixed; 
+    position: absolute;
+    top: 0;
     left: 62%;
     height: 600px;
     width: 37%;
@@ -102,6 +104,7 @@ body {
     padding: 6px;
     border: none;
     border-right: 1px solid gray;
+    cursor: pointer;
 }
 
 #stay {
@@ -561,9 +564,13 @@ input[type="range"] {
     border-radius: 0.8rem;
     font-size: 14px;
     font-weight: 400;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-top: 5px;
 
+}
+
+#property_child>div{
+    padding: 5px;
 }
 
 #all,
