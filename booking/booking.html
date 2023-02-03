@@ -6,12 +6,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title> Booking </title>
         <link rel="stylesheet" href="./booking.css">
-        <link rel="stylesheet" href="./modules/navbar.css">
+        <link rel="stylesheet" href="../navbar_styles/navbar.css">
         <script src="https://kit.fontawesome.com/5fc882c95a.js" crossorigin="anonymous"> </script>
     </head>
     <body>
         <div id="navbar">
-
+            <div>
+                <img src="https://logos-world.net/wp-content/uploads/2022/05/Trivago-Logo-700x394.png" alt="">
+            </div>
+    
+            <div id="navlist">
+                <a href="../favourites/favourites.html"> <i class="fa-regular fa-heart" style="font-size: 23px; opacity: 80%;"> </i> &nbsp; My favourites </a>
+                <a href=""> Log in </a>
+                <a> Menu &nbsp; <i class="fa-solid fa-chevron-down"></i> </a>
+                <a> INR &nbsp; <i class="fa-solid fa-chevron-down"></i> </a>
+            </div>
         </div>
 
         <div id="main">
@@ -118,7 +127,7 @@
     </body>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"> </script>
     <script src="https://smtpjs.com/v3/smtp.js"> </script>
-    <script type="module" src="./booking.js"> </script>
+    <script src="./booking.js"> </script>
 
     <script>
         async function otpRequest(OTP,email) {

@@ -1,8 +1,4 @@
 
-import { navbar } from "./modules/navbar.js";
-
-document.querySelector("#navbar").innerHTML = navbar();
-
 let url = "http://localhost:3000/hotels/50";
 
 window.onload = async function() {
@@ -225,10 +221,10 @@ function payAndbook() {
     let date = document.querySelector("#validity").value;
     let cvv = document.querySelector("#cvv").value;
 
-    // if(card.length != 16 || holder.length < 0 || date.length < 0 || cvv.length != 3) {
-    //     alert("Invalid card details");
-    //     return;
-    // }
+    if(card.length != 16 || holder.length < 0 || date.length < 0 || cvv.length != 3) {
+        alert("Invalid card details");
+        return;
+    }
 
     document.querySelector("#pay").innerHTML = "";
     document.querySelector("#pay").innerHTML = 
