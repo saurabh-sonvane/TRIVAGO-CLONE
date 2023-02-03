@@ -1,0 +1,163 @@
+
+
+  * {
+    font-family: system-ui;
+}
+#emailpage{
+    
+    /* border: 2px solid red; */
+    width: 50%;
+    margin: auto;
+    margin-top: 5%;
+   display: flex;
+   flex-direction: column;
+    /* align-items: center; */
+   
+}
+#loginpage{
+    margin: auto;
+    width: 45%;
+   
+}
+#imglogo>img{
+width: 30%;
+}
+h1{
+    margin-top: 10%;
+    font-size: 35px;
+
+}
+label {
+   
+    padding-top: 2%;
+    color: black;
+    font-weight: 700;
+}
+
+input[type=password]
+ {
+    width: 100%;
+    padding: 18px;
+    margin: 25px 25px 0px 0px;
+    outline: 0;
+    display: inline-block;
+    border: 1px solid #c7cad0;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 18px;
+    font-weight: 450;
+}
+input[type=submit]
+ {
+    width: 100%;
+    padding: 18px;
+    margin: 25px 25px 0px 0px;
+    outline: 0;
+    display: inline-block;
+   border: none;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 18px;
+    font-weight: 700;
+    background-color: #1c8ed1;
+    color: white;
+    cursor: pointer;
+}
+
+input[type=submit]:hover
+ {
+    background-color: #007cc2;
+ }
+ .abc{
+  margin-top: 5%;
+ }
+
+ .ab{
+  color: #1996d2;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.eyeicon {
+  position: absolute;
+  top: 290px;
+  right: 780px;
+
+}
+
+.ey{
+  width: 100%;
+  padding: 18px;
+  margin: 25px 25px 0px 0px;
+  outline: 0;
+  display: inline-block;
+  border: 1px solid #c7cad0;
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-size: 18px;
+  font-weight: 450;
+}
+
+.ia{
+margin: auto;
+margin-bottom: -9%;
+}
+.ia>a{
+  font-size: 20px;
+  text-decoration: none;
+  color: #67696a;
+  font-weight: 500;
+}
+.fullpass{
+  margin-top: 10%;
+}
+
+@media screen and  (min-width: 768px) and (max-width: 1024px) {
+  
+  #emailpage{
+    /* margin-top: -10%; */
+    margin-top: 10%;
+width: 90%;
+}
+#loginpage{
+  margin: auto;
+  width: 60%;
+ 
+}
+#imglogo>img{
+width: 30%;
+}
+.eyeicon {
+position: absolute;
+top: 300px;
+right: 250px;
+
+}
+ 
+}
+@media screen and  (min-width: 480px) and (max-width: 768px) {
+ 
+ 
+ 
+  #emailpage{
+      /* margin-top: -10%; */
+      margin-top: 10%;
+  width: 90%;
+  }
+  #loginpage{
+    margin: auto;
+    width: 100%;
+   
+}
+#imglogo>img{
+width: 30%;
+}
+.eyeicon {
+  position: absolute;
+  top: 290px;
+  right: 70px;
+
+}
+        
+ 
+}
