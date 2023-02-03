@@ -12,7 +12,7 @@ The goal of the Project TRIVAGO-Clone is to create our version of Trivago whick 
 
 * Document Object Model (DOM)
 * SMTP API and Elastic Email
-* FontAwesome
+* Font Awesome
 
 ## About Trivago
 
