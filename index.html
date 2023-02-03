@@ -27,8 +27,8 @@
                 />
               </svg>
             </div>
-            <div>
-              <p>My favourites</p>
+            <div class="myFav_text">
+              <p class="myFav">My favourites</p>
             </div>
           </div>
           <div class="nav_login">
@@ -38,10 +38,9 @@
             <div class="menu">
               <p>Menu</p>
               <div class="menu_options">
-                <p>Account Settings</p>
-                <p>Recently Viewed</p>
-                <p>Help and Support</p>
-                <p>Log out</p>
+                <p class="account_settings">Account Settings</p>
+                <p class="recently_viewed">Recently Viewed</p>
+                <p class="help_support">Help and Support</p>
               </div>
             </div>
             <span class="rotate">
@@ -168,7 +167,16 @@
                 stroke="currentColor" stroke-linecap="round"
                 stroke-miterlimit="10" stroke-width="2" color="grey"/ >
               </svg>
-              <input type="text" placeholder="Enter Location here ..." />
+              <input type="text" placeholder="Enter Location here ..." class="search searchQuerry"/>
+              <!-- mic -->
+              <div class="mic">
+                <svg viewBox="0 0 24 24" class="style-scope yt-icon " style="pointer-events:none;display:block;width:28px;height:28px;">
+                  <g class="style-scope yt-icon" >
+                  <path d="M12 3c-1.66 0-3 1.37-3 3.07v5.86c0 1.7 1.34 3.07 3 3.07s3-1.37 3-3.07V6.07C15 4.37 13.66 3 12 3Zm6.5 9h-1c0 3.03-2.47 5.5-5.5 5.5A5.51 5.51 0 0 1 6.5 12h-1c0 3.24 2.39 5.93 5.5 6.41V21h2v-2.59c3.11-.48 5.5-3.17 5.5-6.41Z" class="style-scope yt-icon"/>
+                  </g>
+                  </svg>
+              </div>
+       
               <button>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -195,7 +203,7 @@
               <div>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="pointer-events-none max-h-full max-w-full"><g fill="currentColor"><path d="M19 5h-1a1 1 0 0 0-2 0H8a1 1 0 0 0-2 0H5a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm1 13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9h16zm0-10H4V7a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1z"/><circle cx="7.5" cy="12.5" r="1.5"/><path d="M19 5h-1a1 1 0 0 0-2 0H8a1 1 0 0 0-2 0H5a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm1 13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9h16zm0-10H4V7a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1z"/><circle cx="7.5" cy="12.5" r="1.5"/></g></svg>
               </div>
-              <div style="display: flex;flex-direction: column;">
+              <div style="display: flex;flex-direction: column;" class="checkInTextDIv">
                 <p style=" font-size: 12px;">Check in</p>
                 <p style="margin-top: -12px;font-weight: 700; font-size: 12px;" class="checkIn">currDate</p>
               </div>
@@ -211,7 +219,7 @@
               <div>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="pointer-events-none max-h-full max-w-full"><g fill="currentColor"><path d="M19 5h-1a1 1 0 0 0-2 0H8a1 1 0 0 0-2 0H5a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm1 13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9h16zm0-10H4V7a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1z"/><circle cx="7.5" cy="12.5" r="1.5"/><path d="M19 5h-1a1 1 0 0 0-2 0H8a1 1 0 0 0-2 0H5a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm1 13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9h16zm0-10H4V7a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1z"/><circle cx="7.5" cy="12.5" r="1.5"/></g></svg>
               </div>
-              <div style="display: flex;flex-direction: column;">
+              <div style="display: flex;flex-direction: column;" class="checkOutTextDiv">
                 <p style=" font-size: 12px;">Check out</p>
                 <p style="margin-top: -12px;font-weight: 700; font-size: 12px;" class="chekOut">--/--/----</p>
               </div>
@@ -352,15 +360,42 @@
             src="./fotor_2023-2-1_21_56_11.png"
             alt=""
             style="height: 250px"
+            class="vertical_img"
           />
           <div class="parentOfAcitvities">
             <div class="recent1">
-              <div>SVG + time</div>
-              <div>data</div>
-            </div>
-            <div class="recent2">
-              <div>SVG + time</div>
-              <div>data</div>
+              <div class="recentDataA" >
+                <div>
+                  <p style="font-size: 14px; font-weight: 700;">City</p>
+                  <div style="display: flex; gap: 10px; align-items: center;">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="pointer-events-none max-h-full max-w-full"><g fill="currentColor"><path d="M19 5h-1a1 1 0 0 0-2 0H8a1 1 0 0 0-2 0H5a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm1 13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9h16zm0-10H4V7a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1z"/><circle cx="7.5" cy="12.5" r="1.5"/><path d="M19 5h-1a1 1 0 0 0-2 0H8a1 1 0 0 0-2 0H5a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm1 13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9h16zm0-10H4V7a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1z"/><circle cx="7.5" cy="12.5" r="1.5"/></g></svg>
+<p class="checkIn_out">Date</p>
+                  </div>
+                  <div style="display: flex; gap: 10px; align-items: center;">  
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="pointer-events-none max-h-full max-w-full"><g fill="currentColor"><path d="M13.13 12.14a4.5 4.5 0 1 0-7.26 0A5 5 0 0 0 2 17a3 3 0 0 0 3 3h9a3 3 0 0 0 3-3 5 5 0 0 0-3.87-4.86zM9.5 6a3.49 3.49 0 0 1 2.44 6A3.5 3.5 0 0 1 6 9.5 3.5 3.5 0 0 1 9.5 6zM14 19H5a2 2 0 0 1-2-2 4 4 0 0 1 3.74-4 4.41 4.41 0 0 0 5.52 0A4 4 0 0 1 16 17a2 2 0 0 1-2 2z"/><path d="M19.31 10.24A3.93 3.93 0 0 0 20 8a4 4 0 0 0-6.94-2.69 5.87 5.87 0 0 1 .7.71A3 3 0 1 1 16 11a2.91 2.91 0 0 1-1.15-.23v.11a4.5 4.5 0 0 1-.28.83A4 4 0 0 0 16 12a3.94 3.94 0 0 0 2.55-.94A3 3 0 0 1 21 14a1 1 0 0 1-1 1h-2.35a6.67 6.67 0 0 1 .26 1H20a2 2 0 0 0 2-2 4 4 0 0 0-2.69-3.76z"/></g></svg>
+<p><span>0 </span>rooms,<span> 0 </span>guests</p>
+                  </div>
+                </div>
+                <div>
+                  <button>Search again</button>
+                </div>
+              </div>
+              <div class="recentDataB" >
+                <div>
+                  <p style="font-size: 14px; font-weight: 700;">City</p>
+                  <div style="display: flex; gap: 10px; align-items: center;">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="pointer-events-none max-h-full max-w-full"><g fill="currentColor"><path d="M19 5h-1a1 1 0 0 0-2 0H8a1 1 0 0 0-2 0H5a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm1 13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9h16zm0-10H4V7a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1z"/><circle cx="7.5" cy="12.5" r="1.5"/><path d="M19 5h-1a1 1 0 0 0-2 0H8a1 1 0 0 0-2 0H5a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm1 13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9h16zm0-10H4V7a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1z"/><circle cx="7.5" cy="12.5" r="1.5"/></g></svg>
+<p class="checkIn_out">Date</p>
+                  </div>
+                  <div style="display: flex; gap: 10px; align-items: center;">  
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="pointer-events-none max-h-full max-w-full"><g fill="currentColor"><path d="M13.13 12.14a4.5 4.5 0 1 0-7.26 0A5 5 0 0 0 2 17a3 3 0 0 0 3 3h9a3 3 0 0 0 3-3 5 5 0 0 0-3.87-4.86zM9.5 6a3.49 3.49 0 0 1 2.44 6A3.5 3.5 0 0 1 6 9.5 3.5 3.5 0 0 1 9.5 6zM14 19H5a2 2 0 0 1-2-2 4 4 0 0 1 3.74-4 4.41 4.41 0 0 0 5.52 0A4 4 0 0 1 16 17a2 2 0 0 1-2 2z"/><path d="M19.31 10.24A3.93 3.93 0 0 0 20 8a4 4 0 0 0-6.94-2.69 5.87 5.87 0 0 1 .7.71A3 3 0 1 1 16 11a2.91 2.91 0 0 1-1.15-.23v.11a4.5 4.5 0 0 1-.28.83A4 4 0 0 0 16 12a3.94 3.94 0 0 0 2.55-.94A3 3 0 0 1 21 14a1 1 0 0 1-1 1h-2.35a6.67 6.67 0 0 1 .26 1H20a2 2 0 0 0 2-2 4 4 0 0 0-2.69-3.76z"/></g></svg>
+<p><span>0 </span>rooms,<span> 0 </span>guests</p>
+                  </div>
+                </div>
+                <div>
+                  <button>Search again</button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -375,7 +410,7 @@
             <button class="top_city">Top Cities</button>
             <button class="top_destination">Top Destinations</button>
             <hr class="topCityDestination_hr" />
-            <div class="containerForTopCities">
+            <div class="containerForTopCities" >
               <div>
                 <img
                   src="https://blogs.revv.co.in/blogs/wp-content/uploads/2020/01/Nandi-Hills.jpg"
@@ -425,7 +460,7 @@
                 <p>10,111 Hotels <strong>Avg. ₹3,589</strong></p>
               </div>
             </div>
-            <div class="containerForTopDestinations">
+            <!-- <div class="containerForTopDestinations">
               <div>
                 <img
                   src="https://blogs.revv.co.in/blogs/wp-content/uploads/2020/01/Nandi-Hills.jpg"
@@ -474,7 +509,7 @@
                 <p class="titleOfEachHotel">Hotels in Kolkata</p>
                 <p>10,111 Hotels <strong>Avg. ₹3,589</strong></p>
               </div>
-            </div>
+            </div> -->
           </div>
  
         </div>
@@ -548,7 +583,7 @@
       <div class="more_body1">
         <div class="more_common">
           <a href="">Hotels in Mumbai</a>
-          <a href="">Hotels in Bangalore</a>
+          <a href="">Hotels in Bangaluru</a>
           <a href="">Hotels in Pune</a>
           <a href="">Hotels in Delhi</a>
           <a href="">Hotels in Hydrabad</a>
@@ -623,7 +658,7 @@
               class="footer_input"
               placeholder="Email address"
             />
-            <button>Subscribe</button>
+            <button id="subscribe">Subscribe</button>
           </div>
         </div>
 

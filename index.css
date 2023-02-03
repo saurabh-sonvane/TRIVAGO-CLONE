@@ -1,7 +1,22 @@
+
+
+
+
 body {
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, Sans-Serif;
+  overflow-x: hidden;
+}
+header{
+  width: 100%;
+}
+main{
+  width: 100%;
+}
+footer{
+  width: 100%;
+  /* border: 40px solid rgb(161, 88, 100); */
 }
 nav div {
   display: flex;
@@ -104,6 +119,18 @@ nav p {
 .currency_options p {
   font-family: Proxima Vara, Arial, Helvetica, Sans, Sans-Serif;
   font-size: 14px;
+}
+.menu_options>p:nth-child(1):hover{
+  background: rgb(249,250,250);
+}
+.menu_options>p:nth-child(2):hover{
+  background: rgb(249,250,250);
+}
+.menu_options>p:nth-child(3):hover{
+  background: rgb(249,250,250);
+}
+.menu_options>p:nth-child(4):hover{
+  background: rgb(249,250,250);
 }
 
 /* ------------------------------nav style ends here---------------------------------- */
@@ -224,6 +251,9 @@ nav p {
   justify-content: space-between;
   align-items: center;
 }
+.screenShotImg img{
+  width: 100%;
+}
 .text_100 {
   font-size: 14px;
   color: rgb(175, 179, 188);
@@ -282,40 +312,30 @@ nav p {
 .guestInfoDiv {
   display: none;
 }
-/* .part3:hover .guestInfoDiv {
-  display: block;
-  position: absolute;
-  top: 58%;
-  left: 55%;
-  width: 300px;
-  border-radius: 15px;
-  padding: 20px 15px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  z-index: 3;
-  background: white;
-  display: none;
-} */
 .input_adults{
     width: 20%;
     border: 1px solid rgb(215,217,221);
     border-radius: 10px;
     outline: none;
+    text-align: center;
 }
 .input_childrens{
     width: 20%;
     border: 1px solid rgb(215,217,221);
     border-radius: 10px;
     outline: none;
+    text-align: center;
+
 }
 .input_rooms{
     width: 20%;
     border: 1px solid rgb(215,217,221);
     border-radius: 10px;
     outline: none;
+    text-align: center;
+
 }
+
 .inc_adults{
     width: 18%;
     border-radius: 50%;
@@ -363,13 +383,22 @@ nav p {
     background: white;
 
 }
-/* -----------------------functional div div ends here----------------------- */
+.mic{
+background: white;
+border-radius: 5px;
+padding: 5px;
+}
+.mic:hover{
+  background-color: rgb(242, 221, 221);
+}
+/* -----------------------functional div  ends here----------------------- */
 
 /* -----------------------recent_activity div starts here----------------------- */
 
 .recent_activity {
   width: 73%;
   margin: auto;
+  margin-top: 70px;
 }
 
 .recent_activity > div:nth-child(1) > p {
@@ -383,17 +412,63 @@ nav p {
 .recent1 {
   display: flex;
   flex-direction: column;
+  gap: 30px;
+  line-height: 15px;
 }
-.recent2 {
-  display: flex;
-  flex-direction: column;
-}
+
 .parentOfAcitvities {
   padding: 20px 0;
   display: flex;
   flex-direction: column;
   gap: 90px;
+  width: 50%;
 }
+.recentDataA p {
+font-size: 12px;
+}
+.recentDataB p {
+font-size: 12px;
+}
+.vertical_img{
+  width: auto;
+  /* display: none; */
+}
+.recentDataA{
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: rgb(249,250,250);
+  border-radius: 20px;
+}
+.recentDataA button{
+  height: 40px;
+  width: 130px;
+  background-color: white;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  border: 1px solid black;
+}
+.recentDataB{
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: rgb(249,250,250);
+  border-radius: 20px;
+}
+.recentDataB button{
+  height: 40px;
+  width: 130px;
+  background-color: white;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  border: 1px solid black;
+}
+
+
 
 /* -----------------------recent_activity div ends here----------------------- */
 
@@ -531,8 +606,6 @@ nav p {
   justify-content: space-between;
   display: flex;
   gap: 40px;
-  justify-content: space-between;
-  width: 78%;
   margin-top: 40px;
   margin-bottom: 40px;
 }
@@ -583,11 +656,7 @@ nav p {
 
 /* ---------------------------------------footer starts here--------------------------------------- */
 
-footer {
-  background: rgb(10, 17, 33);
-  color: white;
-  margin-top: 70px;
-}
+
 footer hr {
   width: 100%;
   margin: auto;
@@ -600,7 +669,11 @@ footer hr {
 }
 footer {
   font-family: Arial, Helvetica, Sans-Serif;
-  padding: 30px 20px;
+  padding: 30px 40px;
+  width: 100%;
+  background: rgb(10, 17, 33);
+  color: white;
+  margin-top: 70px;
 }
 .parent_footer {
   width: 85%;
@@ -738,7 +811,7 @@ footer {
   width: 40%;
 border: none;
 outline: none;
-box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+/* box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px; */
  }
  .calen2{
   display: none;
@@ -747,7 +820,185 @@ box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   width: 40%;
   border: none;
 outline: none;
-box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+/* box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px; */
  }
 
 /* -------------------------------- calender css ends here ------------------------------------ */
+
+
+@media only screen and (min-width:750px) and (max-width:1361px){
+.nav_login{
+display: none;
+}
+
+.containerForTopCities{
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(3,1fr);
+}
+.checkOutTextDiv p{
+  display: none;
+}
+.checkInTextDIv p{
+  display: none;
+}
+#subscribe{
+  width: 100px;
+  height: 40px;
+}
+nav{
+  width: 100%;
+}
+.functional_div{
+  width: 100%;
+}
+
+  }
+@media only screen and (min-width:690px) and (max-width:750px){
+  .nav_login{
+display: none;
+}
+.nav_currency{
+display: none;
+}
+  .containerForTopCities{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+  }
+  .containerForTopCities img{
+    width: 100%;
+  }
+  .welcome_div{
+    display: none;
+  }
+  .recent_activity{
+    display: none;
+  }
+  #subscribe{
+    width: 100px;
+    height: 40px;
+    margin: 0 10px;
+  }
+  .checkOutTextDiv p{
+    display: none;
+  }
+  .checkInTextDIv p{
+    display: none;
+  }
+  .myFav{
+    width: 100px;
+    }
+    .nav_login{
+    display: none;
+    }
+    body{
+      padding-left: 50px;
+    }
+    .imageOfCompanies{
+      display: none;
+    }
+    .more{
+      display: flex;
+      flex-direction: column;
+    }
+    .mail_info{
+      display: flex;
+    }
+  }
+
+
+  @media only screen and (min-width:0px) and (max-width:690px){
+    .myFav_text{
+      display: none;
+    }
+    .nav_currency:hover .currency_options {
+  display: block;
+  position: absolute;
+  background: white;
+  top: 62px;
+  left: 48%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 2;
+  border-radius: 10px;
+  width: 40%;
+  padding-left: 20px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+    .nav_menu:hover .menu_options {
+  display: block;
+  position: absolute;
+  background: white;
+  top: 62px;
+  left: 43%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 2;
+  border-radius: 10px;
+  width: 41%;
+  padding-left: 20px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+
+    .nav_login{
+display: none;
+}
+nav{
+  margin-left: -30px;
+  display: flex;
+  justify-content: center;
+}
+    .complex_div{
+      display: flex;
+      flex-wrap: wrap;
+    }
+       .mail_info{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+.more{
+  padding-left:  50px;
+}
+    .info_guests_rooms{
+      display: none;
+    }
+    .containerForTopCities{
+      display: grid;
+      grid-template-columns: repeat(1,1fr);
+    }
+    .containerForTopCities img{
+      width: 100%;
+    }
+    .welcome_div{
+      display: none;
+    }
+    .recent_activity{
+      display: none;
+    }
+    #subscribe{
+/* display: none; */
+width: 90%;
+height: 45px;
+    }
+
+    .checkOutTextDiv p{
+      display: none;
+    }
+    .checkInTextDIv p{
+      display: none;
+    }
+        .imageOfCompanies{
+      display: none;
+    }
+        .more{
+      display: flex;
+      flex-direction: column;
+    }
+  }

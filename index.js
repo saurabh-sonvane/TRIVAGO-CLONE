@@ -1,5 +1,5 @@
 function onloadHomePage(){
-
+// localStorage.setItem("currentUser","sa");
     const weekday = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
     const months = ["1","2","3","4","5","6","7","8","9","10","11","12"];
     const d = new Date();
@@ -9,12 +9,46 @@ function onloadHomePage(){
 
 document.querySelector(".part3").addEventListener("click",showGetInfoDiv);
 
+
+let numberOfAdults=localStorage.getItem("adults_number")||1;
+let numberOfChildrens=localStorage.getItem("childrens_number")||0;
+let numberOfRooms=localStorage.getItem("rooms_number")||1;
+let totalGuest=Number(numberOfAdults)+Number(numberOfChildrens);
+localStorage.setItem("totalGuest",totalGuest);
+document.querySelector(".guests").innerHTML=totalGuest;
+document.querySelector(".rooms").innerHTML=numberOfRooms;
+
+
+// recent data part
+var tt=localStorage.getItem("currentUser")||"";
+if(tt!=""){
+    document.querySelector(".nav_login").style="display:none";
 }
+
+
+
+}
+
+
+// microphone
+const button = document.querySelector('.mic');
+const textInput = document.querySelector('.search');
+
+button.addEventListener('click', () => {
+  const recognition = new webkitSpeechRecognition();
+  recognition.onresult = event => {
+    textInput.value = event.results[0][0].transcript;
+  };
+  recognition.start();
+});
+
+
+
 let getInfoDIvClk=0;
 function showGetInfoDiv(){
     getInfoDIvClk++;
     if(getInfoDIvClk%2==1){
-        document.querySelector(".guestInfoDiv").style="  display: block; position: absolute;top: 58%;  left: 55%; width: 300px; border-radius: 15px;padding: 20px 15px; display: flex; flex-direction: column;gap: 20px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; z-index: 3;background: white;";
+        document.querySelector(".guestInfoDiv").style="  display: block; position: absolute;top: 58%;  left: 55%; width: 20%; border-radius: 15px;padding: 20px 15px; display: flex; flex-direction: column;gap: 20px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; z-index: 3;background: white;";
     }
     else{
         document.querySelector(".guestInfoDiv").style="  display: none;";
@@ -25,17 +59,21 @@ document.querySelector(".part4_submit").addEventListener("click",submitFunc);
 function submitFunc(){
     let checkInValue=document.querySelector(".calen1").value;
     let checkOutValue=document.querySelector(".calen2").value;
-if(checkInValue && checkOutValue){
+    let searchQuerry=document.querySelector(".searchQuerry").value;
+if(checkInValue && checkOutValue && searchQuerry){
     localStorage.setItem("checkInDate",checkInValue);
     localStorage.setItem("checkOutDate",checkOutValue);
+    localStorage.setItem("searchQuerry",searchQuerry);
 }
-
+else if(!searchQuerry){
+    alert("Enter Location ! 😀");
+}
 else if(!checkOutValue){
     alert("please select checkout date 😀")
 }
 else {
     const weekday = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
-    const months = ["1","2","3","4","5","6","7","8","9","10","11","12"];
+    const months = ["01","02","03","04","05","06","07","08","09","10","11","12"];
     const d = new Date();
     let day = weekday[d.getDay()];
     let checkInValue=d.getFullYear()+"-"+months[d.getMonth()]+"-"+d.getDate();
@@ -45,10 +83,10 @@ else {
     localStorage.setItem("checkOutDate",checkOutValue);
 }
 // set adultNo. childrenNo and roomNo as 1 , 0 , 1 by default 
+
 }
 
 document.querySelector(".applyBtn").addEventListener("click",setUserDetails);
-    console.log(ad);
 function setUserDetails(){
     let adultsNumber=document.querySelector(".input_adults").value;
    localStorage.setItem("adults_number",adultsNumber);
@@ -56,7 +94,16 @@ function setUserDetails(){
    localStorage.setItem("childrens_number",childrensNumber);
     let roomsNumber=document.querySelector(".input_rooms").value;
    localStorage.setItem("rooms_number",roomsNumber);
+   let numberOfAdults=localStorage.getItem("adults_number")||1;
+let numberOfChildrens=localStorage.getItem("childrens_number")||0;
+let numberOfRooms=localStorage.getItem("rooms_number")||1;
+let totalGuest=Number(numberOfAdults)+Number(numberOfChildrens);
+localStorage.setItem("totalGuest",totalGuest);
 
+document.querySelector(".guests").innerHTML=totalGuest;
+document.querySelector(".rooms").innerHTML=numberOfRooms;
+
+document.querySelector(".guestInfoDiv").style="display:none;";
 }
 
 document.querySelector(".resetBtn").addEventListener("click",resetUserDetails);
@@ -68,4 +115,75 @@ function resetUserDetails(){
     localStorage.setItem("childrens_number",0);
     document.querySelector(".input_rooms").value=1;
     localStorage.setItem("rooms_number",1);
+    localStorage.setItem("totalGuest",1);
+
+
+    document.querySelector(".guests").innerHTML=1;
+document.querySelector(".rooms").innerHTML=1;
+}
+
+document.querySelector(".inc_adults").addEventListener("click",increseAdult);
+document.querySelector(".dec_adults").addEventListener("click",decreaseAdult);
+
+function increseAdult(){
+let x=Number(document.querySelector(".input_adults").value);
+document.querySelector(".input_adults").value=x+1;
+}
+
+function decreaseAdult(){
+    let x=Number(document.querySelector(".input_adults").value);
+    if(x>1){
+        document.querySelector(".input_adults").value=x-1;
+    }
+}
+
+
+
+document.querySelector(".inc_childrens").addEventListener("click",increseChildren);
+document.querySelector(".dec_childrens").addEventListener("click",decreaseChildren);
+
+function increseChildren(){
+    let x=Number(document.querySelector(".input_childrens").value);
+  document.querySelector(".input_childrens").value=x+1;
+
+}
+
+function decreaseChildren(){
+    let x=Number(document.querySelector(".input_childrens").value);
+    console.log(x);
+    if(x>0){
+        document.querySelector(".input_childrens").value=x-1;       
+    }
+}
+
+document.querySelector(".inc_rooms").addEventListener("click",increseRoom);
+document.querySelector(".dec_rooms").addEventListener("click",decreaseRoom);
+
+function increseRoom(){
+    let x=Number(document.querySelector(".input_rooms").value);
+  document.querySelector(".input_rooms").value=x+1;
+}
+
+function decreaseRoom(){
+    let x=Number(document.querySelector(".input_rooms").value);
+    if(x>1){
+        document.querySelector(".input_rooms").value=x-1;
+    }
+
+}
+
+
+// if(Number(document.querySelector(".input_adults").value)>6){
+//     alert("You can Book Maximum 6 rooms from a single account 😄 !")
+//     return;
+// }
+
+document.querySelector(".myFav_text").addEventListener("click",gotoMyFavPage);
+function gotoMyFavPage(){
+    window.location.href="./arun.html";
+}
+
+document.querySelector(".nav_login").addEventListener("click",gotoLoginPage);
+function gotoLoginPage(){
+    window.location.href="./vk.html";
 }
