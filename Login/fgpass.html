@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="fgpass.css">
+    <title>forgot</title>
+</head>
+
+<body>
+    <div id="emailpage">
+        <div id="loginpage">
+            <div id="imglogo">
+                <img src="https://auth.trivago.com/_static/icons/logo.svg" alt="">
+            </div>
+            <h1>Now you can create a new password</h1>
+            <form action="" id="forgot">
+                <label for="">create new password</label>
+                <i id="togglePassword" class="fa-solid fa-eye-slash eyeicon"></i>
+                <br>
+                <input id="newpassname" type="password" oninput="countcharcter()"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                    title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                    required>
+
+
+                <div class="pr">
+                   <p>Your password should have at least:</p>
+                </div>
+
+                <ul>
+                    <div class="li1">
+                        <li>10 characters</li>
+                       <p><span id="count">0</span>/10</p>
+                    </div>
+                    <div class="li2">
+                        <li> 1 uppercase character.</li>
+                        <p><span id="upper">0</span>/1</p>
+                    </div>
+                </ul>
+
+                <label for="">confirm new password</label>
+                <i id="togglePassword" class="fa-solid fa-eye-slash eyeicon"></i>
+                <br>
+                <input id="conpassname" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                    title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                    required>
+
+                    <br>
+          <input type="submit" value="Save">
+
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script src="fgpass.js"></script>
