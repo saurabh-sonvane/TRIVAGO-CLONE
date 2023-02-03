@@ -1,17 +1,8 @@
 
-let url = "http://localhost:3000/hotels/50";
-
-window.onload = async function() {
-
-    try {
-        let response = await fetch(url);
-        let json = await response.json();
-        display(json);
-    } catch (err) {
-        console.error(err);
-    }
-    
-}
+window.onload =  function() {
+    let bookElm = JSON.parse(localStorage.getItem("bookingdata"));
+    display(bookElm);
+} 
 
 function display(data) {
     let container = document.querySelector("#head");
@@ -55,6 +46,71 @@ function display(data) {
     }
 
     allReviews.textContent = `(${review} Reviews) . ${tag}`;
+    setData();
+}
+
+function setData() {
+
+    //containers to push
+    let nights = document.querySelector("#night");
+    let duration = document.querySelector("#fromTo");
+    let userPref = document.querySelector("#userPref");
+    let roomPrice = document.querySelector("#roomPrice");
+    let price = document.querySelector("#price1");
+    let discount = document.querySelector("#discount");
+    let coupon = document.querySelector("#coupon");
+    let total = document.querySelector("#total");
+
+    let checkIn = JSON.parse(localStorage.getItem("checkInDate"));
+    let checkOut = JSON.parse(localStorage.getItem("checkOutDate"));
+
+    //taking out data
+    let guests = JSON.parse(localStorage.getItem("totalGuest"));
+    let bill = Number.parseInt(bookElm.bookingCost);
+    let nightVal = findDuration(checkIn,checkOut);
+    //processing data
+    let actual = bill*nightVal;
+    let durationVal = `${getDay(checkIn)} to ${getDay(checkOut)}`;
+    let userprefVal = `1 Room, ${guests} Guests`;
+    let roompriceVal = `Room price for ${nightVal} Night X ${guests} Guests`;
+    let priceVal = actual;
+    let discountVal = actual*5/100;
+    let couponVal = actual*20/100;
+    let totalVal = actual-discountVal-couponVal+100; 
+
+    //pushing data
+    nights.textContent = nightVal;
+    duration.textContent = durationVal;
+    userPref.textContent = userprefVal;
+    roomPrice.textContent = roompriceVal;
+    price.textContent = "₹" + priceVal;
+    discount.textContent = "₹" + discountVal;
+    coupon.textContent = "₹" + couponVal;
+    total.textContent = "₹" + totalVal;
+}
+
+function findDuration(a,b) {
+    console.log(a,b);
+    let date1 = new Date(a);
+    let date2 = new Date(b);
+    var diff = Math.abs(date2.getTime() - date1.getTime());
+    var duration = Math.ceil(diff / (1000 * 3600 * 24));  
+    return duration;
+}
+
+function getDay(a) {
+    let date = new Date(a);
+    let month =  date.toLocaleString('default', { month: 'short' });
+    let num = "";
+    for(let i = a.length-1; i >= 0; i--) {
+        if(a[i] == "/") {
+            break;
+        }
+
+        num += a[i];
+    }
+
+    return num + " " + month;
 }
 
 function generateOtp() {
