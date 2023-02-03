@@ -11,7 +11,7 @@
 
 </head>
 
-<body>
+<body onload="dis()">
     <div id="navbar">
         <div>
             <img src="https://logos-world.net/wp-content/uploads/2022/05/Trivago-Logo-700x394.png" alt="">
@@ -27,17 +27,248 @@
     </div>
 
     <div id="search_bar">
-        <input id="search" type="text" placeholder="Enter a hotel name or destination">
-        <button id="btn">click</button>
+        <div class="functional_div">
+            <div>
+                <div class="complex_div">
+                    <div class="part1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            class="pointer-events-none max-h-full max-w-full">
+                            <path d="M10 3a7 7 0 1 0 7 7 7 7 0 0 0-7-7zm11 18-6-6" vector-effect="non-scaling-stroke"
+                                fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10"
+                                stroke-width="2" color="grey" />
+                        </svg>
+                        <input class="search searchQuerry" type="text" placeholder="Enter Location here ..." />
+                        <button>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                class="pointer-events-none max-h-full max-w-full x_inSearch">
+                                <path vector-effect="non-scaling-stroke" d="m7 7 10 10m0-10L7 17" fill="none"
+                                    stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"
+                                    color="grey" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="part2" style="display: flex; justify-content: space-evenly;align-items: center;">
+                        <div class="part2_1 hov1" style="display: flex;align-items: center; gap: 10px;">
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    class="pointer-events-none max-h-full max-w-full">
+                                    <g fill="currentColor">
+                                        <path
+                                            d="M19 5h-1a1 1 0 0 0-2 0H8a1 1 0 0 0-2 0H5a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm1 13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9h16zm0-10H4V7a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1z" />
+                                        <circle cx="7.5" cy="12.5" r="1.5" />
+                                        <path
+                                            d="M19 5h-1a1 1 0 0 0-2 0H8a1 1 0 0 0-2 0H5a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm1 13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9h16zm0-10H4V7a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1z" />
+                                        <circle cx="7.5" cy="12.5" r="1.5" />
+                                    </g>
+                                </svg>
+                            </div>
+                            <div style="display: flex;flex-direction: column;" class="checkInTextDIv">
+                                <p style=" font-size: 12px;">Check in</p>
+                                <p style="margin-top: -12px;font-weight: 700; font-size: 12px;" class="checkIn">currDate
+                                </p>
+                            </div>
+                            <div style="display: flex;">
+
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    class="pointer-events-none max-h-full max-w-full left_arrow">
+                                    <path vector-effect="non-scaling-stroke" d="m10 17 5-5m-5-5 5 5" fill="none"
+                                        stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10"
+                                        stroke-width="2" />
+                                </svg>
+
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    class="pointer-events-none max-h-full max-w-full right_arrow">
+                                    <path vector-effect="non-scaling-stroke" d="m10 17 5-5m-5-5 5 5" fill="none"
+                                        stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10"
+                                        stroke-width="2" />
+                                </svg>
+                            </div>
+                        </div>
+                        <input type="date" style="height: 20px;" class="calen1">
+                        <div class="part2_2 hov2" style="display: flex;align-items: center; gap: 10px;">
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    class="pointer-events-none max-h-full max-w-full">
+                                    <g fill="currentColor">
+                                        <path
+                                            d="M19 5h-1a1 1 0 0 0-2 0H8a1 1 0 0 0-2 0H5a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm1 13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9h16zm0-10H4V7a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1z" />
+                                        <circle cx="7.5" cy="12.5" r="1.5" />
+                                        <path
+                                            d="M19 5h-1a1 1 0 0 0-2 0H8a1 1 0 0 0-2 0H5a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm1 13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9h16zm0-10H4V7a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1z" />
+                                        <circle cx="7.5" cy="12.5" r="1.5" />
+                                    </g>
+                                </svg>
+                            </div>
+                            <div style="display: flex;flex-direction: column;" class="checkOutTextDiv">
+                                <p style=" font-size: 12px;">Check out</p>
+                                <p style="margin-top: -12px;font-weight: 700; font-size: 12px;" class="chekOut">
+                                    --/--/----</p>
+                            </div>
+                            <div style="display: flex;">
+
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    class="pointer-events-none max-h-full max-w-full left_arrow">
+                                    <path vector-effect="non-scaling-stroke" d="m10 17 5-5m-5-5 5 5" fill="none"
+                                        stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10"
+                                        stroke-width="2" />
+                                </svg>
+
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    class="pointer-events-none max-h-full max-w-full right_arrow">
+                                    <path vector-effect="non-scaling-stroke" d="m10 17 5-5m-5-5 5 5" fill="none"
+                                        stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10"
+                                        stroke-width="2" />
+                                </svg>
+                            </div>
+                        </div>
+                        <input type="date" style="height: 20px;" class="calen2">
+                    </div>
+                    <div class="part3">
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                class="pointer-events-none max-h-full max-w-full">
+                                <g fill="currentColor">
+                                    <path
+                                        d="M13.13 12.14a4.5 4.5 0 1 0-7.26 0A5 5 0 0 0 2 17a3 3 0 0 0 3 3h9a3 3 0 0 0 3-3 5 5 0 0 0-3.87-4.86zM9.5 6a3.49 3.49 0 0 1 2.44 6A3.5 3.5 0 0 1 6 9.5 3.5 3.5 0 0 1 9.5 6zM14 19H5a2 2 0 0 1-2-2 4 4 0 0 1 3.74-4 4.41 4.41 0 0 0 5.52 0A4 4 0 0 1 16 17a2 2 0 0 1-2 2z" />
+                                    <path
+                                        d="M19.31 10.24A3.93 3.93 0 0 0 20 8a4 4 0 0 0-6.94-2.69 5.87 5.87 0 0 1 .7.71A3 3 0 1 1 16 11a2.91 2.91 0 0 1-1.15-.23v.11a4.5 4.5 0 0 1-.28.83A4 4 0 0 0 16 12a3.94 3.94 0 0 0 2.55-.94A3 3 0 0 1 21 14a1 1 0 0 1-1 1h-2.35a6.67 6.67 0 0 1 .26 1H20a2 2 0 0 0 2-2 4 4 0 0 0-2.69-3.76z" />
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="info_guests_rooms">
+                            <p class="guest_">Guests <span class="guests">1</span> </p>
+                            <p class="room_">Rooms <span class="rooms">1</span></p>
+                        </div>
+                    </div>
+                    <div class="guestInfoDiv">
+                        <div style="display: flex; justify-content: space-between;">
+                            <p>Adults</p>
+                            <div style="display: flex; justify-content:flex-end; gap:10px; width:100%;">
+                                <button class="dec_adults">-</button>
+                                <input type="number" value="1" class="input_adults">
+                                <button class="inc_adults" id="inc">+</button>
+                            </div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <p>Childrens</p>
+                            <div style="display: flex;justify-content: flex-end;gap: 10px; width:100%;">
+                                <button class="dec_childrens">-</button>
+                                <input type="number" value="0" class="input_childrens">
+                                <button class="inc_childrens">+</button>
+                            </div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <p>Rooms</p>
+                            <div style="display: flex;justify-content: flex-end;gap: 10px; width:100%;">
+                                <button class="dec_rooms">-</button>
+                                <input type="number" value="1" class="input_rooms">
+                                <button class="inc_rooms">+</button>
+                            </div>
+                        </div>
+                        <hr
+                            style="border:1px solid grey; border:none; border-bottom:1px solid rgb(237,238,240);width:100%; margin: auto;">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div style="text-align: left;">
+                                <p>Pet Friendly</p>
+                                <p>Only show stays that allow pets</p>
+                            </div>
+                            <div>
+                                <input type="checkbox">
+                            </div>
+                        </div>
+                        <hr
+                            style="border:1px solid grey; border:none; border-bottom:1px solid rgb(237,238,240);width:100%; margin: auto;">
+                        <div style="display: flex; justify-content: space-between;">
+                            <button class="resetBtn">Reset</button>
+                            <button class="applyBtn">Apply</button>
+                        </div>
+                    </div>
+                    <div class="part4">
+                        <button class="part4_submit">Submit</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <input id="search" style="display: none;" type="text" placeholder="Enter a hotel name or destination">
+        <button style="display: none;" id="btn">click</button>
     </div>
 
     <div id="sorting">
-     
+        <div class="range_container">
+            <div class="form_control">
+                <!-- <div class="form_control_container">
+                    <div class="form_control_container__time">Min</div>
+                    <input class="form_control_container__time__input" type="number" id="fromInput" value="0" min="0" max="46000"/>
+                  </div>  -->
+                <p class="pn">Price/night</p>
+                <div>
+                    <p class="time_input"></p>
+                    <p class="time_inpu"></p>
+                </div>
+
+                <!-- <div class="form_control_container">
+                    <div class="form_control_container__time">Max</div>
+                    <input class="form_control_container__time__input" type="number" id="toInput" value="3000" min="0" max="46000"/>
+                  </div>  -->
+
+            </div>
+            <div class="sliders_control">
+                <input id="fromSlider" type="range" value="0" min="0" max="46000" />
+                <input id="toSlider" type="range" value="3000" min="0" max="46000" />
+            </div>
+
+        </div>
+        <div id="property_main">
+            <div>Property type</div>
+            <div id="property_child">
+                <div id="all">All</div>
+                <div id="hotel">Hotel</div>
+                <div id="house">House/Apartment</div>
+            </div>
+        </div>
+        <div id="guest">
+            <div class="r">Guest rating</div>
+            <div class="rate">
+                <div>All</div>
+                <div class="log"><svg fill="#000000" height="10px" width="10px" version="1.1" id="Layer_1"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        viewBox="0 0 330 330" xml: space="preserve">
+                        <path id="XMLID_225_"
+                            d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z" />
+                    </svg></div>
+            </div>
+
+        </div>
+        <div id="location">
+            <div class="r">Location</div>
+            <div class="rate">
+                <div>City center</div>
+                <div class="log"><svg fill="#000000" height="12px" width="12px" version="1.1" id="Layer_1"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        viewBox="0 0 330 330" xml: space="preserve">
+                        <path id="XMLID_225_"
+                            d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z" />
+                    </svg></div>
+            </div>
+        </div>
+        <div id="more">
+            <div class="r">More filters</div>
+            <div class="rate">
+                <div>Select</div>
+                <div class="log"><svg fill="#000000" height="12px" width="12px" version="1.1" id="Layer_1"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        viewBox="0 0 330 330" xml: space="preserve">
+                        <path id="XMLID_225_"
+                            d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z" />
+                    </svg></div>
+            </div>
+        </div>
     </div>
 
-    <div id="map">
+    <!-- <div id="map">
 
-    </div>
+    </div> -->
 
     <div id="main_data">
         <div id="left">
@@ -250,5 +481,6 @@
 
 </body>
 
-</html>
 <script src="./search.js"></script>
+
+</html>

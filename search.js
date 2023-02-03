@@ -9542,20 +9542,234 @@ function display(arr) {
 }
 // ***********************map*********************
 
-$(".ig").hover(function () {
-    $(".text").fadeIn();
-}, function () {
-    $(".text").fadeOut();
-});
 
 async function request() {
     var city = document.getElementById("search").value;
     let res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=28374a44f2f611a1e60c78f789a9f84e`)
     let data = await res.json();
 
-     document.getElementById("gmap_canvas").src = `https://maps.google.com/maps?q=${city}&t=&z=13&ie=UTF8&iwloc=&output=embed`
+    document.getElementById("gmap_canvas").src = `https://maps.google.com/maps?q=${city}&t=&z=13&ie=UTF8&iwloc=&output=embed`
 
 }
 
 // ****************************price slider*************************
-    
+
+function controlFromInput(fromSlider, fromInput, toInput, controlSlider) {
+    const [from, to] = getParsed(fromInput, toInput);
+    fillSlider(fromInput, toInput, '#C6C6C6', '#25daa5', controlSlider);
+    if (from > to) {
+        fromSlider.value = to;
+        fromInput.value = to;
+    } else {
+        fromSlider.value = from;
+    }
+}
+
+function controlToInput(toSlider, fromInput, toInput, controlSlider) {
+    const [from, to] = getParsed(fromInput, toInput);
+    fillSlider(fromInput, toInput, '#C6C6C6', '#25daa5', controlSlider);
+    setToggleAccessible(toInput);
+    if (from <= to) {
+        toSlider.value = to;
+        toInput.value = to;
+    } else {
+        toInput.value = from;
+    }
+}
+
+function controlFromSlider(fromSlider, toSlider, fromInput) {
+    const [from, to] = getParsed(fromSlider, toSlider);
+    fillSlider(fromSlider, toSlider, '#C6C6C6', '#25daa5', toSlider);
+    if (from > to) {
+        fromSlider.value = to;
+        //fromInput.value = to;
+    } else {
+        // fromInput.value = from;
+    }
+    document.getElementsByClassName("time_input")[0].textContent = "₹" + from;
+}
+
+function controlToSlider(fromSlider, toSlider, toInput) {
+    const [from, to] = getParsed(fromSlider, toSlider);
+    fillSlider(fromSlider, toSlider, '#C6C6C6', '#25daa5', toSlider);
+    setToggleAccessible(toSlider);
+    if (from <= to) {
+        toSlider.value = to;
+        // toInput.value = to;
+    } else {
+        //toInput.value = from;
+        toSlider.value = from;
+        // document.getElementsByClassName("time_input")[0].textContent=from;
+    }
+    document.getElementsByClassName("time_inpu")[0].textContent = "-₹" + to;
+}
+
+function getParsed(currentFrom, currentTo) {
+    const from = parseInt(currentFrom.value, 10);
+    const to = parseInt(currentTo.value, 10);
+    return [from, to];
+}
+
+function fillSlider(from, to, sliderColor, rangeColor, controlSlider) {
+    const rangeDistance = to.max - to.min;
+    const fromPosition = from.value - to.min;
+    const toPosition = to.value - to.min;
+    controlSlider.style.background = `linear-gradient(
+      to right,
+      ${sliderColor} 0%,
+      ${sliderColor} ${(fromPosition) / (rangeDistance) * 46000}%,
+      ${rangeColor} ${((fromPosition) / (rangeDistance)) * 46000}%,
+      ${rangeColor} ${(toPosition) / (rangeDistance) * 46000}%, 
+      ${sliderColor} ${(toPosition) / (rangeDistance) * 46000}%, 
+      ${sliderColor} 1000%)`;
+}
+
+function setToggleAccessible(currentTarget) {
+    const toSlider = document.querySelector('#toSlider');
+    if (Number(currentTarget.value) <= 0) {
+        toSlider.style.zIndex = 2;
+    } else {
+        toSlider.style.zIndex = 0;
+    }
+}
+
+const fromSlider = document.querySelector('#fromSlider');
+const toSlider = document.querySelector('#toSlider');
+const fromInput = document.querySelector('#fromInput');
+const toInput = document.querySelector('#toInput');
+fillSlider(fromSlider, toSlider, '#C6C6C6', '#25daa5', toSlider);
+setToggleAccessible(toSlider);
+
+fromSlider.oninput = () => controlFromSlider(fromSlider, toSlider, fromInput);
+toSlider.oninput = () => controlToSlider(fromSlider, toSlider, toInput);
+// fromInput.oninput = () => controlFromInput(fromSlider, fromInput, toInput, toSlider);
+// toInput.oninput = () => controlToInput(toSlider, fromInput, toInput, toSlider);
+
+// ************************search*********************************
+document.querySelector(".part3").addEventListener("click", showGetInfoDiv);
+let getInfoDIvClk = 0;
+function showGetInfoDiv() {
+    getInfoDIvClk++;
+    if (getInfoDIvClk % 2 == 1) {
+        document.querySelector(".guestInfoDiv").style = "  display: block; position: absolute;top:21%;  left: 60%; width: 20%; border-radius: 15px;padding: 20px 15px; display: flex; flex-direction: column;gap: 20px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; z-index: 3;background: white;";
+    }
+    else {
+        document.querySelector(".guestInfoDiv").style = "  display: none;";
+    }
+}
+
+document.querySelector(".inc_adults").addEventListener("click", increseAdult);
+document.querySelector(".dec_adults").addEventListener("click", decreaseAdult);
+
+function increseAdult() {
+    let x = Number(document.querySelector(".input_adults").value);
+    document.querySelector(".input_adults").value = x + 1;
+}
+
+function decreaseAdult() {
+    let x = Number(document.querySelector(".input_adults").value);
+    if (x > 1) {
+        document.querySelector(".input_adults").value = x - 1;
+    }
+}
+
+
+
+document.querySelector(".inc_childrens").addEventListener("click", increseChildren);
+document.querySelector(".dec_childrens").addEventListener("click", decreaseChildren);
+
+function increseChildren() {
+    let x = Number(document.querySelector(".input_childrens").value);
+    document.querySelector(".input_childrens").value = x + 1;
+
+}
+
+function decreaseChildren() {
+    let x = Number(document.querySelector(".input_childrens").value);
+    console.log(x);
+    if (x > 0) {
+        document.querySelector(".input_childrens").value = x - 1;
+    }
+}
+
+document.querySelector(".inc_rooms").addEventListener("click", increseRoom);
+document.querySelector(".dec_rooms").addEventListener("click", decreaseRoom);
+
+function increseRoom() {
+    let x = Number(document.querySelector(".input_rooms").value);
+    document.querySelector(".input_rooms").value = x + 1;
+}
+
+function decreaseRoom() {
+    let x = Number(document.querySelector(".input_rooms").value);
+    if (x > 1) {
+        document.querySelector(".input_rooms").value = x - 1;
+    }
+
+}
+
+//apply
+
+document.querySelector(".applyBtn").addEventListener("click", setUserDetails);
+function setUserDetails() {
+    let adultsNumber = document.querySelector(".input_adults").value;
+    localStorage.setItem("adults_number", adultsNumber);
+    let childrensNumber = document.querySelector(".input_childrens").value;
+    localStorage.setItem("childrens_number", childrensNumber);
+    let roomsNumber = document.querySelector(".input_rooms").value;
+    localStorage.setItem("rooms_number", roomsNumber);
+    let numberOfAdults = localStorage.getItem("adults_number") || 1;
+    let numberOfChildrens = localStorage.getItem("childrens_number") || 0;
+    let numberOfRooms = localStorage.getItem("rooms_number") || 1;
+    let totalGuest = Number(numberOfAdults) + Number(numberOfChildrens);
+    localStorage.setItem("totalGuest", totalGuest);
+
+    document.querySelector(".guests").innerHTML = totalGuest;
+    document.querySelector(".rooms").innerHTML = numberOfRooms;
+    document.querySelector(".guestInfoDiv").style = "display:none;";
+}
+
+//reset
+
+document.querySelector(".resetBtn").addEventListener("click", resetUserDetails);
+
+function resetUserDetails() {
+    document.querySelector(".input_adults").value = 1;
+    localStorage.setItem("adults_number", 1);
+    document.querySelector(".input_childrens").value = 0;
+    localStorage.setItem("childrens_number", 0);
+    document.querySelector(".input_rooms").value = 1;
+    localStorage.setItem("rooms_number", 1);
+    localStorage.setItem("totalGuest", 1);
+
+
+    document.querySelector(".guests").innerHTML = 1;
+    document.querySelector(".rooms").innerHTML = 1;
+
+}
+
+function dis() {
+
+    const weekday = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    const months = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"];
+    const d = new Date();
+    let day = weekday[d.getDay()];
+    console.log(d.getMonth());
+    document.querySelector(".checkIn").innerHTML = day + ", " + d.getDate() + "-" + months[d.getMonth()] + "-" + d.getFullYear();
+
+    document.querySelector(".part3").addEventListener("click", showGetInfoDiv);
+
+
+    let numberOfAdults = localStorage.getItem("adults_number") || 1;
+    let numberOfChildrens = localStorage.getItem("childrens_number") || 0;
+    let numberOfRooms = localStorage.getItem("rooms_number") || 1;
+    let totalGuest = Number(numberOfAdults) + Number(numberOfChildrens);
+    localStorage.setItem("totalGuest", totalGuest);
+    document.querySelector(".guests").innerHTML = totalGuest;
+    document.querySelector(".rooms").innerHTML = numberOfRooms;
+
+    var cty_name = localStorage.getItem("searchQuerry");
+    document.getElementById("search").value = cty_name;
+    display(hotels);
+}
+
