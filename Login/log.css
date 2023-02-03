@@ -1,4 +1,6 @@
 
+
+
   * {
     font-family: system-ui;
 }
@@ -46,14 +48,11 @@ input[type=password]
     font-size: 18px;
     font-weight: 450;
 }
-input[type=password]:hover{
-    border: 1px solid #007cc2;
-}
 input[type=submit]
  {
     width: 100%;
     padding: 18px;
-    margin: 25px 25px 0px 0px;
+    margin: 10px 10px 0px 0px;
     outline: 0;
     display: inline-block;
    border: none;
@@ -70,40 +69,53 @@ input[type=submit]:hover
  {
     background-color: #007cc2;
  }
+ .abc{
+  margin-top: 5%;
+ }
 
- li {
-    color: #808387;
+ .ab{
+  color: #1996d2;
+  font-size: 18px;
+  font-weight: 600;
 }
 
-.pr {
-    margin-top: -2%;
-}
 .eyeicon {
-    position: absolute;
-    top: 310px;
-    right: 750px;
-    
-    }
-    .eyeicon1 {
-      position: absolute;
-      top: 570px;
-      right: 750px;
-      
-      }
+  position: absolute;
+  top: 340px;
+  right: 780px;
 
-      .ey{
-        width: 100%;
-        padding: 18px;
-        margin: 25px 25px 0px 0px;
-        outline: 0;
-        display: inline-block;
-        border: 1px solid #c7cad0;
-        border-radius: 10px;
-        box-sizing: border-box;
-        font-size: 18px;
-        font-weight: 450;
-      }
-     
+}
+
+.ey{
+  width: 100%;
+  padding: 18px;
+  margin: 25px 25px 0px 0px;
+  outline: 0;
+  display: inline-block;
+  border: 1px solid #c7cad0;
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-size: 18px;
+  font-weight: 450;
+}
+
+.ia{
+margin: auto;
+margin-bottom: -9%;
+}
+.ia>a{
+  font-size: 20px;
+  text-decoration: none;
+  color: #67696a;
+  font-weight: 500;
+}
+.fullpass{
+  margin-top: 10%;
+}
+.ab{
+    color: #1996d2;
+    text-decoration: none;
+}
 
 .li1 {
     display: flex;
@@ -135,62 +147,50 @@ input[type=submit]:hover
 
 @media screen and  (min-width: 768px) and (max-width: 1024px) {
   
-    #emailpage{
+  #emailpage{
+    /* margin-top: -10%; */
+    margin-top: 10%;
+width: 90%;
+}
+#loginpage{
+  margin: auto;
+  width: 60%;
+ 
+}
+#imglogo>img{
+width: 30%;
+}
+.eyeicon {
+position: absolute;
+top: 300px;
+right: 250px;
+
+}
+ 
+}
+@media screen and  (min-width: 480px) and (max-width: 768px) {
+ 
+ 
+ 
+  #emailpage{
       /* margin-top: -10%; */
       margin-top: 10%;
   width: 90%;
   }
   #loginpage{
     margin: auto;
-    width: 60%;
+    width: 100%;
    
-  }
-  #imglogo>img{
-  width: 30%;
-  }
-  .eyeicon {
+}
+#imglogo>img{
+width: 30%;
+}
+.eyeicon {
   position: absolute;
-  top: 300px;
-  right: 250px;
-  
-  }
-  .eyeicon1 {
-    position: absolute;
-    top: 300px;
-    right: 250px;
-    
-    }
-   
-  }
-  @media screen and  (min-width: 480px) and (max-width: 768px) {
-   
-   
-   
-    #emailpage{
-        /* margin-top: -10%; */
-        margin-top: 10%;
-    width: 90%;
-    }
-    #loginpage{
-      margin: auto;
-      width: 100%;
-     
-  }
-  #imglogo>img{
-  width: 30%;
-  }
-  .eyeicon {
-    position: absolute;
-    top: 290px;
-    right: 70px;
-  
-  }
-  .eyeicon1 {
-    position: absolute;
-    top: 550px;
-    right: 80px;
-    
-    }
-          
-   
-  }
+  top: 290px;
+  right: 70px;
+
+}
+        
+ 
+}

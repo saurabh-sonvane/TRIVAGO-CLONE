@@ -1,3 +1,5 @@
+// var user=JSON.parse(localStorage.getItem("newuser")) ||{};
+ var arr=JSON.parse(localStorage.getItem("userbase")) ||[];
 document.getElementById("personalInformation")
  var obj1=JSON.parse(localStorage.getItem("fname")) || "";
  var obj3=JSON.parse(localStorage.getItem("lname")) || "";
@@ -16,40 +18,40 @@ if(fname.length==0 || lname.length==0){
     return
  }
 
-var data=fname;
-var data1=lname;
+ let user=JSON.parse( localStorage.getItem("newuser"));
+user.name=fname;
+arr.push(user)
+console.log(user, arr)
+  
+ localStorage.setItem("userbase", JSON.stringify(arr));
+ localStorage.setItem("currentuser", JSON.stringify(user));
+ localStorage.setItem("newuser","");
 
-    console.log(data);
-obj1=data;
-obj3=data1;
- localStorage.setItem("fname", JSON.stringify(obj1))
- localStorage.setItem("lname", JSON.stringify(obj3))
  alert("Your changes has been saved")
 
 
 }
+
+let currentuser=JSON.parse(localStorage.getItem("currentuser"))
 
 document.getElementById("Passwordinformation")
 var obj2=JSON.parse(localStorage.getItem("passwo")) ||[];
 function uppass(){
     // event.preventDefault();
-var oldpass=document.getElementById("oldpass").value;
-var  newpass=document.getElementById("newpass").value;
+    var oldpass=document.getElementById("oldpass").value;
+    var  newpass=document.getElementById("newpass").value;
 
-if(oldpass.length==0 || newpass.length==0){
-    alert("please fill the required field")
-    return 
-}
- if(fname.length<10 || lname.length<10){
-    alert("please fill more the 3 characters")
-    return
- }
-
-var data={oldpass, newpass};
-console.log(data);
-obj2.push(data);
- localStorage.setItem("passwo", JSON.stringify(obj2))
- alert("Your changes has been saved")
+    for(let i=0; i<arr.length; i++){
+        if(arr[i].email==currentuser.email && arr[i].password==oldpass){
+            arr[i].password=newpass;
+            currentuser.password=newpass;
+            alert("Your changes has been saved")
+            break;
+        }
+    }
+    localStorage.setItem("currentuser" , JSON.stringify(currentuser));
+ localStorage.setItem("userbase", JSON.stringify(arr))
+ 
 }
 
 const passwordInput = document.querySelector("#newpass")
@@ -70,3 +72,23 @@ eye.addEventListener("click", function(){
    
    
   }
+
+  function countcharcter(){
+    var news = document.getElementById("newpass").value;
+    var ct= document.getElementById("count")
+    ct.textContent=news.length;
+    upper();
+   }
+   
+   function upper(){
+     var count=0;
+     var up= document.getElementById("newpass").value;
+     var cts=document.getElementById("upper")
+     for(let i=0; i<up.length; i++){
+         if(up[i]==up[i].toUpperCase()){
+            count++;
+         }
+     }
+     cts.textContent=count
+    
+   }

@@ -1,25 +1,40 @@
 
-
+let user=JSON.parse( localStorage.getItem("newuser"));
 
 
 document.getElementById("passw").addEventListener("submit",passfun)
 
-var array=JSON.parse(localStorage.getItem("userbase")) ||[];
   function passfun(){
     event.preventDefault();
     var pass=document.getElementById("passname").value;
-    for(let i=0; i<array.length; i++){
-      if(array[i].password==pass){
-        alert("login successfull")
-        window.location.href="./project.html"
-        localStorage.setItem("currentuser", JSON.stringify(array[i]));
-        
-        return
-      }
-    }
-    alert("wrong password")
+    user.password=pass;
+     
+     localStorage.setItem("newuser", JSON.stringify(user));
+     alert("Password set successfully")
+    window.location.href="../Menu/account.html"
    
   }
+  
+
+  function countcharcter(){
+    var news = document.getElementById("passname").value;
+    var ct= document.getElementById("count")
+    ct.textContent=news.length;
+    upper();
+   }
+   
+   function upper(){
+     var count=0;
+     var up= document.getElementById("passname").value;
+     var cts=document.getElementById("upper")
+     for(let i=0; i<up.length; i++){
+         if(up[i]==up[i].toUpperCase()){
+            count++;
+         }
+     }
+     cts.textContent=count
+    
+   }
   const passwordInput = document.querySelector("#passname")
   const eye = document.querySelector('#togglePassword')
   
@@ -38,8 +53,6 @@ var array=JSON.parse(localStorage.getItem("userbase")) ||[];
    
   )
 
-    var saveemail=JSON.parse(localStorage.getItem("currentuser"))||[];
+    var saveemail=JSON.parse(localStorage.getItem("email"))||[];
       var sav=document.getElementById("savemail")
-      sav.append(saveemail.email);
-
-      
+      sav.append(saveemail);

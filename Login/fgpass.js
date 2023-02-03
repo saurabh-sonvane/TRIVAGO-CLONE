@@ -1,22 +1,35 @@
+class User{
+  constructor(email,password,name){
+    this.email=email;
+    this.password=password;
+    this.name=name;
+  }
+}
+
+
 document.querySelector("#forgot").addEventListener("submit", fop);
-var old_data = JSON.parse(localStorage.getItem("currentUser")) ||[];
+var userbase = JSON.parse(localStorage.getItem("userbase")) ||[];
 
 function fop() {
   event.preventDefault();
   var newpassname = document.getElementById("newpassname").value;
   var conpassname = document.getElementById("conpassname").value;
+  if(newpassname!=conpassname){
+    alert(" confirm password does not match")
+    return
+  }
   
-  old_data.push(conpassname);
-
-  localStorage.setItem("currentUser", JSON.stringify(old_data));
-  
-    if ( newpassname === conpassname) {
-    
+  var currentuser=JSON.parse(localStorage.getItem("currentuser")) ||[];
+  for(let i=0; i<userbase.length; i++){
+    if(userbase[i].email==currentuser.email){
+      userbase[i].password=newpassname;
+      localStorage.setItem("userbase", JSON.stringify(userbase));
       alert("new password set successfully");
-
-    }else{
-        alert("password does not match")
+      window.location.href="./email.html"
+      return
     }
+  }
+   
   }
 
   function countcharcter(){
@@ -38,3 +51,28 @@ function fop() {
     cts.textContent=count
    
   }
+  const passwordInput = document.querySelector("#newpassname")
+  const eye = document.querySelector('#togglePassword')
+  
+  eye.addEventListener("click", function(){
+      const type = passwordInput.getAttribute("type") === "password" ? "text" : "password"
+      passwordInput.setAttribute("type", type)
+      passwordInput.setAttribute("class" , "ey")
+     
+          this.classList.add( "fa-regular");
+          this.classList.add("fa-eye");
+        }
+  )
+
+  const passwordInput1 = document.querySelector("#conpassname")
+  const eye1 = document.querySelector('#togglePassword1')
+  
+  eye1.addEventListener("click", function(){
+      const type1 = passwordInput1.getAttribute("type") === "password" ? "text" : "password"
+      passwordInput1.setAttribute("type", type1)
+      passwordInput1.setAttribute("class" , "ey")
+     
+          this.classList.add( "fa-regular");
+          this.classList.add("fa-eye");
+        }
+  )

@@ -72,7 +72,7 @@
                         <label for="">New password </label>
                         <br>
                         <div id="lastpassword">
-                            <input class="newly" id="newpass" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 10 or more characters" required />
+                            <input class="newly" id="newpass" type="password" oninput="countcharcter()"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 10 or more characters" required />
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                id="eyes" class="pointer-events-none max-h-full eyeicon max-w-full">
                                 <g fill="currentColor">
@@ -104,11 +104,11 @@
                         <ul>
                             <div class="li1">
                                 <li>Has minimum 10 characters.</li>
-                                <p>0/10</p>
+                                <p><span id="count">0</span>/10</p>
                             </div>
                             <div class="li2">
                                 <li>Contains at least 1 upper case character.</li>
-                                <p>0/1</p>
+                                <p><span id="upper">0</span>/1</p>
                             </div>
                             <button id="update" onclick="uppass()"> Change your password</button>
                         </ul>
