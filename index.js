@@ -20,9 +20,9 @@ document.querySelector(".rooms").innerHTML=numberOfRooms;
 
 
 // recent data part
-var tt=localStorage.getItem("currentUser")||"";
+var tt=JSON.parse(localStorage.getItem("currentuser"))||"";
 if(tt!=""){
-    document.querySelector(".nav_login").style="display:none";
+    document.querySelector(".userName").innerHTML=tt.name;
 }
 
 
@@ -185,5 +185,30 @@ function gotoMyFavPage(){
 
 document.querySelector(".nav_login").addEventListener("click",gotoLoginPage);
 function gotoLoginPage(){
-    window.location.href="./vk.html";
+    window.location.href="../Login/email.html";
+}
+
+document.querySelector(".account_settings").addEventListener("click",gotoAccount);
+function gotoAccount(){
+    window.location.href="../Menu/account.html";
+}
+
+
+document.querySelector(".nav_login").addEventListener("click",gotoLoginPage);
+function gotoLoginPage(){
+    window.location.href="../Login/email.html";
+}
+document.querySelector(".recently_viewed").addEventListener("click",gotoRecent);
+function gotoRecent(){
+    window.location.href="../Menu/recently.html";
+}
+document.querySelector(".help_support").addEventListener("click",gotoHelp);
+function gotoHelp(){
+    window.location.href="../Menu/help.html";
+}
+
+
+document.querySelector(".clearInput").addEventListener("click",clearInputFunc);
+function clearInputFunc(){
+    document.querySelector(".searchQuerry").value="";
 }

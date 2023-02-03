@@ -11,7 +11,7 @@ var array=JSON.parse(localStorage.getItem("userbase")) ||[];
     for(let i=0; i<array.length; i++){
       if(array[i].password==pass){
         alert("login successfull")
-        window.location.href="./project.html"
+        window.location.href="../index.html";
         localStorage.setItem("currentuser", JSON.stringify(array[i]));
         
         return
