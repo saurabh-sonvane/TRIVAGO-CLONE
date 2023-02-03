@@ -9287,9 +9287,7 @@ var hotels = [
     }
 
 ]
-document.getElementById("btn").addEventListener("click", function () {
-    display(hotels);
-})
+
 document.getElementById("sb").addEventListener("change", function () {
     var ch = document.getElementById("sb").value;
     if (ch === "OR") {
@@ -9323,7 +9321,7 @@ var to = 0;
 function display(arr) {
     request();
     to = 0
-    var city = document.getElementById("search").value;
+    var city = document.querySelector(".search").value;
     let result = city.toUpperCase();
     document.getElementById("items").innerHTML = "";
     arr.map(function (elem, index) {
@@ -9544,7 +9542,7 @@ function display(arr) {
 
 
 async function request() {
-    var city = document.getElementById("search").value;
+    var city = document.querySelector(".search").value;
     let res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=28374a44f2f611a1e60c78f789a9f84e`)
     let data = await res.json();
 
@@ -9773,3 +9771,52 @@ function dis() {
     display(hotels);
 }
 
+document.querySelector(".part2_1").addEventListener("click",showcalen1);
+function showcalen1(){
+    document.querySelector(".calen1").style="display:block;height: 25px;border-radius: 5px;width: 40%;border: none;outline: none;";
+    document.querySelector(".part2_1").style="display:none";
+    document.querySelector(".part2").style="height:60px;align-items:center;justify-content:space-around";
+}
+
+document.querySelector(".part2_2").addEventListener("click",showcalen2);
+function showcalen2(){
+    document.querySelector(".calen2").style="display:block;height: 25px;border-radius: 5px;width: 40%;border: none;outline: none;";
+    document.querySelector(".part2_2").style="display:none";
+    document.querySelector(".part2").style="height:60px;align-items:center;justify-content:space-around";
+}
+
+
+
+
+
+document.querySelector(".part4_submit").addEventListener("click",submitFunc);
+function submitFunc(){
+    let checkInValue=document.querySelector(".calen1").value;
+    let checkOutValue=document.querySelector(".calen2").value;
+    let searchQuerry=document.querySelector(".searchQuerry").value;
+if(checkInValue && checkOutValue && searchQuerry){
+    localStorage.setItem("checkInDate",checkInValue);
+    localStorage.setItem("checkOutDate",checkOutValue);
+    localStorage.setItem("searchQuerry",searchQuerry);
+}
+else if(!searchQuerry){
+    alert("Enter Location ! 😀");
+}
+else if(!checkOutValue){
+    alert("please select checkout date 😀")
+}
+else {
+    const weekday = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+    const months = ["01","02","03","04","05","06","07","08","09","10","11","12"];
+    const d = new Date();
+    let day = weekday[d.getDay()];
+    let checkInValue=d.getFullYear()+"-"+months[d.getMonth()]+"-"+d.getDate();
+    console.log(checkInValue);
+    localStorage.setItem("checkInDate",checkInValue);
+    let checkOutValue=document.querySelector(".calen2").value;
+    localStorage.setItem("checkOutDate",checkOutValue);
+    display(hotels);
+}
+// set adultNo. childrenNo and roomNo as 1 , 0 , 1 by default 
+
+}

@@ -900,21 +900,3 @@ input[type="range"] {
 }
 
 /* *********************calender******************* */
-.calen1{
-    display: none;
-    height: 25px;
-    border-radius: 5px;
-    width: 40%;
-  border: none;
-  outline: none;
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-   }
-   .calen2{
-    display: none;
-    height: 25px;
-    border-radius: 5px;
-    width: 40%;
-    border: none;
-  outline: none;
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-   }
