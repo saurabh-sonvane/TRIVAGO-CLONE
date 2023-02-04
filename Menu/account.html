@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Settings</title>
+    <link rel="stylesheet" href="account.css">
+    <link rel="stylesheet" href="nav.css">
+    <script src="https://kit.fontawesome.com/d042af9a63.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/5fc882c95a.js" crossorigin="anonymous"> </script>
+</head>
+
+<body>
+    <!--   ------------------------            Navbar Start           -------------------------------------              -->
+    <!-- <div id="navbar">
+        <div>
+            <img src="https://logos-world.net/wp-content/uploads/2022/05/Trivago-Logo-700x394.png" alt="">
+        </div>
+
+        <div id="navlist">
+            
+            <a href=""> <i class="fa-regular fa-heart" style="font-size: 23px; opacity: 80%;"> </i> &nbsp; My favourites
+            </a>
+            <a href=""> Log in </a>
+            <a> Menu &nbsp; <i class="fa-solid fa-chevron-down"></i> </a>
+            <a> INR &nbsp; <i class="fa-solid fa-chevron-down"></i> </a>
+        </div>
+    </div> -->
+    <header>
+        <nav>
+            <div id="imglogo">
+            <img src="https://auth.trivago.com/_static/icons/logo.svg" alt="">
+        </div>
+
+          <div class="parent_nav">
+            <div class="nav_favourites">
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  class="pointer-events-none max-h-full max-w-full"
+                >
+                  <path
+                    d="M20.42 4.82A5.23 5.23 0 0 0 16.5 3 5.37 5.37 0 0 0 12 5.58 5.37 5.37 0 0 0 7.5 3a5.23 5.23 0 0 0-3.92 1.82A6.35 6.35 0 0 0 2 9.07v.28c0 5.42 7.25 10.18 9.47 11.51a1 1 0 0 0 1 0C14.74 19.53 22 14.77 22 9.35v-.28a6.35 6.35 0 0 0-1.58-4.25zM21 9.18v.17c0 4.94-7.07 9.5-9 10.65-1.92-1.15-9-5.71-9-10.65v-.17a.41.41 0 0 0 0-.11A4.81 4.81 0 0 1 7.5 4a4.39 4.39 0 0 1 3.66 2.12L12 7.44l.84-1.32A4.39 4.39 0 0 1 16.5 4 4.81 4.81 0 0 1 21 9.07a.41.41 0 0 0 0 .11z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </div>
+              <div class="myFav_text">
+                <p class="myFav">My favourites</p>
+              </div>
+            </div>
+            <div class="nav_login">
+              <p class="userName">Log in</p>
+            </div>
+            <div class="nav_menu">
+              <div class="menu">
+                <p>Menu</p>
+                <div class="menu_options">
+                  <p class="account_settings">Account Settings</p>
+                  <p class="recently_viewed">Recently Viewed</p>
+                  <p class="help_support">Help and Support</p>
+                </div>
+              </div>
+              <span class="rotate">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  class="pointer-events-none max-h-full max-w-full"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g
+                    fill="none"
+                    stroke="#0A1121"
+                    stroke-linecap="round"
+                    stroke-miterlimit="10"
+                    stroke-width="2px"
+                  >
+                    <path
+                      vector-effect="non-scaling-stroke"
+                      d="M10 17l5-5M10 7l5 5"
+                      stroke="#0A1121"
+                      fill="none"
+                      stroke-width="2px"
+                    ></path>
+                  </g>
+                </svg>
+              </span>
+            </div>
+            <div class="nav_currency">
+              <div>
+                <p>INR</p>
+                <div class="currency_options">
+                  <p>INR - Indian Rupee</p>
+                  <p>USD - US Dollar</p>
+                  <p>EUR - Euro</p>
+                  <p>GBP - British Pound</p>
+                </div>
+              </div>
+              <span class="rotate">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  class="pointer-events-none max-h-full max-w-full"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g
+                    fill="none"
+                    stroke="#0A1121"
+                    stroke-linecap="round"
+                    stroke-miterlimit="10"
+                    stroke-width="2px"
+                  >
+                    <path
+                      vector-effect="non-scaling-stroke"
+                      d="M10 17l5-5M10 7l5 5"
+                      stroke="#0A1121"
+                      fill="none"
+                      stroke-width="2px"
+                    ></path>
+                  </g>
+                </svg>
+              </span>
+            </div>
+          </div>
+        </nav>
+      </header>
+    <!--           ----------------------------            Navbar end               ----------------------------------            -->
+    <div id="parent">
+        <div id="sidebar">
+            <i class="fa-solid fa-chevron-left backicon"></i>
+            <div style="margin-bottom: -8%;"><a  style="color: #3398f1;" href="" >Back</a></div>
+           
+            <div id="accountSettingsdiv"> <div id="pagevisit"></div><a id="accountSettings" href="account.html">Account Settings </a></div>
+         
+            <div id="accountSettingsdiv1" ><div id="pagevisit1"></div><a id="recetsettings" href="recently.html">Recently viewed</a></div>
+            <div id="accountSettingsdiv2"> <div id="pagevisit2"></div><a id="helpsettings" href="help.html">Help and support</a></div>
+            <hr class="style11">
+            <div> <a style="color: black" href="">Log out</a></div>
+        </div>
+        <div id="mainbar">
+            <h1>Account Settings</h1>
+            <form action="" id="personalInformation">
+                <section >
+                    <h3>Personal Information</h3>
+                    <label for="">First name</label>
+                    <br>
+                    <input type="text" placeholder="e.g. john" id="fname" required minlength="4">
+                    <br>
+                    <label for="">Last name</label>
+                    <br>
+                    <input type="text" placeholder="e.g. Smith" id="lname" required minlength="4"> 
+                    <br>
+                    <div id="bd">
+                        <!-- <input type="submit" value="submit"> -->
+                        <button id="updateinformation" onclick="upinfo()"> Update Personal Information</button>
+                        <button id="del">Delete my account</button>
+                    </div>
+                    <hr class="style13">
+                </section>
+            </form>
+            <form action="" id="Passwordinformation">
+                <section>
+                    <div>
+                        <h3>Change Your Password</h3>
+                        <label for="">Old password</label>
+                        <br>
+                        <input  type="password" id="oldpass" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 10 or more characters" required>
+                        <br>
+                        <label for="">New password </label>
+                        <br>
+                        <div id="lastpassword">
+                            <input class="newly" id="newpass" type="password" oninput="countcharcter()"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 10 or more characters" required />
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                               id="eyes" class="pointer-events-none max-h-full eyeicon max-w-full">
+                                <g fill="currentColor">
+                                    <path
+                                        d="M21.94 11.65C20.92 8.91 16.84 7 12 7s-8.92 1.91-9.94 4.65a1.05 1.05 0 000 .7C3.08 15.09 7.16 17 12 17s8.92-1.91 9.94-4.65a1.05 1.05 0 000-.7zM12 16a4 4 0 114-4 4 4 0 01-4 4z" />
+                                    <circle cx="12" cy="12" r="2" />
+                                </g>
+                            </svg>
+                        </div>
+    
+    
+    
+                        <br>
+                        <div id="hrd">
+                            <div>
+                                <hr class="style14">
+                            </div>
+                            <div>
+                                <hr class="style14">
+                            </div>
+                            <div>
+                                <hr class="style14">
+                            </div>
+                        </div>
+                        <div class="pr">
+                            <h3>Password requirements</h3>
+                        </div>
+    
+                        <ul>
+                            <div class="li1">
+                                <li>Has minimum 10 characters.</li>
+                                <p><span id="count">0</span>/10</p>
+                            </div>
+                            <div class="li2">
+                                <li>Contains at least 1 upper case character.</li>
+                                <p><span id="upper">0</span>/1</p>
+                            </div>
+                            <button id="update" onclick="uppass()"> Change your password</button>
+                        </ul>
+                    </div>
+                </section>
+    
+            </form>
+            
+           
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script src="account.js"></script>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="pass.css">
+  <script src="https://kit.fontawesome.com/d042af9a63.js" crossorigin="anonymous"></script>
+  <title>password</title>
+</head>
+
+<body>
+  
+
+  <div id="emailpage">
+    <div id="loginpage">
+      <div id="imglogo">
+        <img src="https://auth.trivago.com/_static/icons/logo.svg" alt="">
+      </div>
+      <div class="fullpass">
+        <div class="ia">
+          <i class="fa-solid fa-chevron-left backicon"></i>
+          <a id="savemail" href="email.html"></a>
+        </div>
+        <h1>Enter Your password</h1>
+        <form action="" id="passw">
+          <label for="">Password</label>
+          <i id="togglePassword" class="fa-solid fa-eye-slash eyeicon"></i>
+          <br>
+          <input id="passname" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+            required>
+  
+          <br>
+          <input type="submit" value="Log in">
+        </form>
+        <div class="abc">
+          <a class="ab" href="fgpass.html">Forgot Your password?</a>
+        </div>
+      </div>
+      
+
+    </div>
+
+  </div>
+
+
+</body>
+
+</html>
+<script src="pass.js"></script>

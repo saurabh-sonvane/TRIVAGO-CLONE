@@ -1,0 +1,135 @@
+* {
+    font-family: system-ui;
+}
+
+#navbar {
+    top: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    display: flex;
+    border-bottom: 1px solid rgb(202, 200, 200);
+    height: 70px;
+    z-index: 1;
+    background-color: white;
+}
+
+#navbar div {
+    width: 50%;
+}
+
+#navbar div img {
+    width: 125px;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 100%;
+    padding-left: 30px;
+}
+
+#navlist {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#navlist a {
+    text-decoration: none;
+    color: black;
+    padding-top: 25px;
+    padding-left: 30px;
+    padding-right: 25px;
+    white-space: nowrap;
+    font-size: 15px;
+}
+
+#navlist a:hover {
+    background-color: rgb(243, 243, 243);
+}
+
+/*             ------------------              Navbar end               ------------------------------------ */
+
+#parent{
+    display: flex;
+    margin-top: 6%;
+    justify-content: center;
+    
+}
+#sidebar{
+/* border: 1px solid red; */
+margin-top: -1%;
+width:12%;
+margin-right: 5%;
+margin-left: -3%;
+
+}
+.backicon {
+  position: relative;  
+  top: 42px;
+  color: #3398f1;
+}
+#sidebar>div{
+    padding:8%;  
+}
+
+#sidebar>div>a{
+    color: #4f6a7e; 
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 400;
+    word-spacing: 0.1em;
+}
+#accountSettingsdiv1{
+    display: flex;
+    gap: 10px;
+} 
+#sidebar>div>a:hover{
+    text-decoration-line: underline;
+}
+hr.style11{
+    height: 2px;
+	border: 0;
+	box-shadow: 0 10px 10px -10px #e2dfdf inset; 
+}
+
+#mainbar{
+    width: 39%;
+    height: max-content;
+    margin-left: -2%;
+    margin-top: -1%;
+    margin-right: 2%;
+}
+#mainbar>h1{
+    font-size: 40px;
+    
+}
+
+#clearrecent{
+    margin-top: 5%;
+    border: none;
+    background-color: white;
+    color: #768190;
+    cursor: pointer;
+    margin-right: -4%;
+    font-size: 18px;
+}
+#clearrecent:hover{
+    text-decoration-line: underline;
+  
+}
+#viewImgaeName{
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: row;  
+    
+}
+#viewImgaeName:hover{
+    border: 1px solid #768190;
+    border-radius: 15px;
+}
+
+img{
+   border-radius: 10px 1px 0px 10px;
+   height: 150px;
+}
+.nameofhotelhere{
+    margin-left: 3%;
+}
