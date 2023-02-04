@@ -25,7 +25,23 @@ if(tt!=""){
     document.querySelector(".userName").innerHTML=tt.name;
 }
 
+ var arrr=JSON.parse(localStorage.getItem("Hotel"))||[];
+ if(arrr.length>=2){
+    document.querySelector("._ctyname1").innerHTML=arrr[arrr.length-2].hotelName;
+    document.querySelector("#_date1").textContent="04-02-2023"
+    document.querySelector("._rooom1").textContent="1";
+    document.querySelector("._guest1").textContent="1";
 
+    document.querySelector("._ctyname2").textContent=arrr[arrr.length-1].hotelName;
+    document.querySelector("#_date2").textContent="04-02-2023"
+    document.querySelector("._rooom2").textContent="1";
+    document.querySelector("._guest1").textContent="1";
+ }else if(arrr.length===1){
+    document.querySelector("._ctyname1").textContent=arrr[arrr.length-1].hotelName;
+    document.querySelector("#_date1").textContent="04-02-2023"
+    document.querySelector("._rooom1").textContent="1";
+    document.querySelector("._guest1").textContent="1";
+ }
 
 }
 
@@ -64,6 +80,7 @@ if(checkInValue && checkOutValue && searchQuerry){
     localStorage.setItem("checkInDate",checkInValue);
     localStorage.setItem("checkOutDate",checkOutValue);
     localStorage.setItem("searchQuerry",searchQuerry);
+    window.open("./search.html");
 }
 else if(!searchQuerry){
     alert("Enter Location ! 😀");
@@ -79,8 +96,10 @@ else {
     let checkInValue=d.getFullYear()+"-"+months[d.getMonth()]+"-"+d.getDate();
     console.log(checkInValue);
     localStorage.setItem("checkInDate",checkInValue);
+    localStorage.setItem("searchQuerry",searchQuerry);
     let checkOutValue=document.querySelector(".calen2").value;
     localStorage.setItem("checkOutDate",checkOutValue);
+    window.open("./search.html");
 }
 // set adultNo. childrenNo and roomNo as 1 , 0 , 1 by default 
 
@@ -180,7 +199,7 @@ function decreaseRoom(){
 
 document.querySelector(".myFav_text").addEventListener("click",gotoMyFavPage);
 function gotoMyFavPage(){
-    window.location.href="./arun.html";
+    window.location.href="./favourites/favourites.html";
 }
 
 document.querySelector(".nav_login").addEventListener("click",gotoLoginPage);
@@ -212,3 +231,41 @@ document.querySelector(".clearInput").addEventListener("click",clearInputFunc);
 function clearInputFunc(){
     document.querySelector(".searchQuerry").value="";
 }
+
+
+
+document.getElementById("mum").addEventListener("click",function(){
+    localStorage.setItem("searchQuerry","mumbai");
+    localStorage.setItem("checkInDate","2023-02-4");
+    localStorage.setItem("checkOutDate","2023-02-05");
+    window.open("./search.html");
+})
+
+document.getElementById("ben").addEventListener("click",function(){
+    localStorage.setItem("searchQuerry","bengaluru");
+    localStorage.setItem("checkInDate","2023-02-4");
+    localStorage.setItem("checkOutDate","2023-02-05");
+    window.open("./search.html");
+})
+
+document.getElementById("goa").addEventListener("click",function(){
+    localStorage.setItem("searchQuerry","goa");
+    localStorage.setItem("checkInDate","2023-02-4");
+    localStorage.setItem("checkOutDate","2023-02-05");
+    window.open("./search.html");
+})
+
+document.getElementById("jai").addEventListener("click",function(){
+    localStorage.setItem("searchQuerry","jaipur");
+    localStorage.setItem("checkInDate","2023-02-4");
+    localStorage.setItem("checkOutDate","2023-02-05");
+    window.open("./search.html");
+})
+
+document.getElementById("pun").addEventListener("click",function(){
+    localStorage.setItem("searchQuerry","pune"); 
+    localStorage.setItem("checkInDate","2023-02-4");
+    localStorage.setItem("checkOutDate","2023-02-05");
+    window.open("./search.html");
+})
+
