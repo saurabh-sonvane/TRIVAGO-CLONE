@@ -9288,6 +9288,8 @@ var hotels = [
 
 ]
 
+var data=[];
+
 document.getElementById("sb").addEventListener("change", function () {
     var ch = document.getElementById("sb").value;
     if (ch === "OR") {
@@ -9397,6 +9399,8 @@ function display(arr) {
             heart.setAttribute("class", "heart");
             heart.addEventListener("click",function(){
                 heart.innerHTML = '<svg width="28" height="28" viewBox="0 0 24 24" class="hover:text-red-800 cursor-pointer"><path fill="red" d="M20.42 4.82A5.23 5.23 0 0016.5 3 5.37 5.37 0 0012 5.58 5.37 5.37 0 007.5 3a5.23 5.23 0 00-3.92 1.82A6.35 6.35 0 002 9.07v.28c0 5.42 7.25 10.18 9.47 11.51a1 1 0 001 0C14.74 19.53 22 14.77 22 9.35v-.22-.06a6.35 6.35 0 00-1.58-4.25zM21 9.18v.17c0 4.94-7.07 9.5-9 10.65-1.92-1.15-9-5.71-9-10.65v-.17a.41.41 0 000-.11A4.81 4.81 0 017.5 4a4.39 4.39 0 013.66 2.12L12 7.44l.84-1.32A4.39 4.39 0 0116.5 4 4.81 4.81 0 0121 9.07a.41.41 0 000 .11z" fill="red" /></svg>';
+                data.push(elem);
+                localStorage.setItem("Hotel",JSON.stringify(data));
             })
             heart.innerHTML = '<svg width="28" height="28" viewBox="0 0 24 24" class="hover:text-red-800 cursor-pointer"><path d="M20.42 4.82A5.23 5.23 0 0016.5 3 5.37 5.37 0 0012 5.58 5.37 5.37 0 007.5 3a5.23 5.23 0 00-3.92 1.82A6.35 6.35 0 002 9.07v.28c0 5.42 7.25 10.18 9.47 11.51a1 1 0 001 0C14.74 19.53 22 14.77 22 9.35v-.22-.06a6.35 6.35 0 00-1.58-4.25zM21 9.18v.17c0 4.94-7.07 9.5-9 10.65-1.92-1.15-9-5.71-9-10.65v-.17a.41.41 0 000-.11A4.81 4.81 0 017.5 4a4.39 4.39 0 013.66 2.12L12 7.44l.84-1.32A4.39 4.39 0 0116.5 4 4.81 4.81 0 0121 9.07a.41.41 0 000 .11z" fill="currentColor"/></svg>';
             namediv.append(name, heart);
@@ -9817,7 +9821,8 @@ function dis() {
     document.querySelector(".rooms").innerHTML = numberOfRooms;
 
     var cty_name = localStorage.getItem("searchQuerry");
-    document.getElementById("search").value = cty_name;
+    console.log(cty_name);
+    document.querySelector(".search").value = cty_name;
     display(hotels);
 }
 
