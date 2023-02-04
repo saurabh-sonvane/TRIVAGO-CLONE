@@ -338,4 +338,5 @@ function rejected(message) {
 
 function Confirm() {
     alert("Booking Successful");
+    window.open("../index.html");
 }

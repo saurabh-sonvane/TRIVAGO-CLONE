@@ -1,5 +1,6 @@
 
-let arr = JSON.parse(localStorage.getItem("hotelKey")) || [];
+let arr = JSON.parse(localStorage.getItem("Hotel")) || [];
+document.querySelector("#stayy").textContent=arr.length+" Stays";
 
 display(arr);
 
@@ -19,8 +20,8 @@ function display(arr) {
       let city = document.createElement("p");
       city.textContent = search;
 
-      let checkIn = JSON.parse(localStorage.getItem("checkInDate"));
-      let checkOut = JSON.parse(localStorage.getItem("checkOutDate"));
+      let checkIn = (localStorage.getItem("checkInDate"));
+      let checkOut =(localStorage.getItem("checkOutDate"));
 
       let duration = document.createElement("p");
       duration.setAttribute("id", "info");

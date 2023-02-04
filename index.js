@@ -199,7 +199,7 @@ function decreaseRoom(){
 
 document.querySelector(".myFav_text").addEventListener("click",gotoMyFavPage);
 function gotoMyFavPage(){
-    window.location.href="./arun.html";
+    window.location.href="./favourites/favourites.html";
 }
 
 document.querySelector(".nav_login").addEventListener("click",gotoLoginPage);

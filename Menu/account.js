@@ -28,7 +28,7 @@ console.log(user, arr)
  localStorage.setItem("newuser","");
 
  alert("Your changes has been saved")
-
+ 
 
 }
 
