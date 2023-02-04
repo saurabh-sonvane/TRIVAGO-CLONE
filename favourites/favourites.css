@@ -42,3 +42,29 @@
 #list {
     border: 1px solid black;
 }
+
+#items {
+    width: 40%;
+    display: grid;
+    row-gap: 20px;
+}
+
+#items > div {
+    padding: 10px 20px 10px 20px;
+    border-radius: 10px;
+    background-color: whitesmoke;
+    display: flex;
+    gap: 40px;
+}
+
+#items #info {
+    font-weight: lighter;
+    font-size: 15px;
+    line-height: 7px;
+}
+
+#items img {
+    height: 90px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
