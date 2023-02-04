@@ -46,10 +46,10 @@ function display(data) {
     }
 
     allReviews.textContent = `(${review} Reviews) . ${tag}`;
-    setData();
+    setData(data);
 }
 
-function setData() {
+function setData(data) {
 
     //containers to push
     let nights = document.querySelector("#night");
@@ -61,22 +61,25 @@ function setData() {
     let coupon = document.querySelector("#coupon");
     let total = document.querySelector("#total");
 
-    let checkIn = JSON.parse(localStorage.getItem("checkInDate"));
-    let checkOut = JSON.parse(localStorage.getItem("checkOutDate"));
+    let checkIn = (localStorage.getItem("checkInDate"));
+    let checkOut =(localStorage.getItem("checkOutDate"));
+    let roomsData=localStorage.getItem("rooms_number");
 
     //taking out data
     let guests = JSON.parse(localStorage.getItem("totalGuest"));
-    let bill = Number.parseInt(bookElm.bookingCost);
+    let bill = Number.parseInt(data.bookingCost);
     let nightVal = findDuration(checkIn,checkOut);
     //processing data
     let actual = bill*nightVal;
     let durationVal = `${getDay(checkIn)} to ${getDay(checkOut)}`;
-    let userprefVal = `1 Room, ${guests} Guests`;
+    let userprefVal = `${roomsData} Rooms, ${guests} Guests`;
     let roompriceVal = `Room price for ${nightVal} Night X ${guests} Guests`;
     let priceVal = actual;
     let discountVal = actual*5/100;
     let couponVal = actual*20/100;
     let totalVal = actual-discountVal-couponVal+100; 
+
+    console.log(totalVal);
 
     //pushing data
     nights.textContent = nightVal;
@@ -103,7 +106,7 @@ function getDay(a) {
     let month =  date.toLocaleString('default', { month: 'short' });
     let num = "";
     for(let i = a.length-1; i >= 0; i--) {
-        if(a[i] == "/") {
+        if(a[i] == "-") {
             break;
         }
 

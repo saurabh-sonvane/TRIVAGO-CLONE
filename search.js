@@ -9945,5 +9945,9 @@ function abc2(){
 
 
 function bookitem(elem,index){
+    var room=document.querySelector(".rooms").textContent;
+ 
+    localStorage.setItem("rooms",room);
     localStorage.setItem("bookingdata",JSON.stringify(elem));
+    window.open("./booking/booking.html");
 }
