@@ -95,7 +95,7 @@ Visit the Deployed version using this <a href="https://trivago-clone-s17200.netl
 ### Pradeep Tripathi
 - Github : coolcoderpradeep
 - Visit Github : https://github.com/coolcoderpradeep
-- Check out Linkedin : 
+- Check out Linkedin : https://www.linkedin.com/in/pradeep-kumar-tripathi-a3345a248
 
 
 
