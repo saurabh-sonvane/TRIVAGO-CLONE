@@ -68,9 +68,9 @@ Founded in 2005 by three university friends in Düsseldorf (Germany), trivago ha
 - Check out Linkedin : https://www.linkedin.com/in/versha-kumari-87206a20a/
 
 ### Akash Saha
-- Github :
-- Visit Github : 
-- Check out Linkedin : 
+- Github : AkashSaha747
+- Visit Github : https://github.com/AkashSaha747
+- Check out Linkedin : https://www.linkedin.com/in/akash-saha-669a0a1a2/
 
 ### Pradeep Tripathi
 - Github : coolcoderpradeep
