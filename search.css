@@ -907,3 +907,87 @@ input[type="range"] {
 }
 
 /* *********************calender******************* */
+
+
+
+
+
+
+
+#guest{
+    cursor: pointer;
+}
+
+
+
+.guest_ghost{
+display: none;
+width: 15%;
+position: absolute;
+top: 35%;
+left: 56%;
+background: white;
+z-index: 200;
+box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+border-radius: 10px;
+}
+.guest_ghost>div:nth-child(1):hover{
+    background: #f3f4f5;
+}
+.guest_ghost>div:nth-child(2):hover{
+    background: #f3f4f5;
+}
+.guest_ghost>div:nth-child(3):hover{
+    background: #f3f4f5;
+}
+.guest_ghost>div:nth-child(4):hover{
+background: #f3f4f5;
+}
+.rating_1{
+    background: rgb(0,95,0);
+    border-radius: 6px;
+    color: white;
+    padding: 3px 3px;
+    font-weight: bold;
+    font-size: 12px;
+}
+.rating_2{
+    background: #028000;
+    border-radius: 6px;
+    color: white;
+    padding: 3px 3px;
+    font-weight: bold;
+    font-size: 12px;
+
+
+}
+.rating_3{
+    background: #62a30f;
+    border-radius: 6px;
+    color: white;
+    padding: 3px 3px;
+    font-weight: bold;
+    font-size: 12px;
+
+
+}
+.rating_4{
+    background: #fc9e15;
+    border-radius: 6px;
+    color: white;
+    padding: 3px 3px;
+    font-weight: bold;
+    font-size: 12px;
+
+
+}
+.guest_ghost > div{
+    display: flex;
+    padding: 15px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 2px 0px 0px;
+    
+}
+
+.guest_ghost > div>span{
+    margin-left: 20px;
+}

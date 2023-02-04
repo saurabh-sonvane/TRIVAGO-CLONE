@@ -9317,6 +9317,47 @@ document.getElementById("sb").addEventListener("change", function () {
         display(h);
     }
 })
+
+document.getElementById("exc").addEventListener("click",function(){
+    var h = hotels.filter(function(elem){
+        if(Number(elem.rating.overall)>=8.5){
+            return elem;
+        }
+    })
+    display(h);
+});
+
+document.getElementById("vg").addEventListener("click",function(){
+    var h = hotels.filter(function(elem){
+        if(Number(elem.rating.overall)>=8.0){
+            return elem;
+        }
+    })
+    display(h);
+});
+
+
+document.getElementById("g").addEventListener("click",function(){
+    var h = hotels.filter(function(elem){
+        if(Number(elem.rating.overall)>=7.5){
+            return elem;
+        }
+    })
+    display(h);
+});
+
+
+document.getElementById("f").addEventListener("click",function(){
+    var h = hotels.filter(function(elem){
+        if(Number(elem.rating.overall)<=7.5){
+            return elem;
+        }
+    })
+    display(h);
+});
+
+
+
 var to = 0;
 function display(arr) {
     request();
@@ -9354,6 +9395,9 @@ function display(arr) {
             name.textContent = elem.hotelName;
             var heart = document.createElement("div");
             heart.setAttribute("class", "heart");
+            heart.addEventListener("click",function(){
+                heart.innerHTML = '<svg width="28" height="28" viewBox="0 0 24 24" class="hover:text-red-800 cursor-pointer"><path fill="red" d="M20.42 4.82A5.23 5.23 0 0016.5 3 5.37 5.37 0 0012 5.58 5.37 5.37 0 007.5 3a5.23 5.23 0 00-3.92 1.82A6.35 6.35 0 002 9.07v.28c0 5.42 7.25 10.18 9.47 11.51a1 1 0 001 0C14.74 19.53 22 14.77 22 9.35v-.22-.06a6.35 6.35 0 00-1.58-4.25zM21 9.18v.17c0 4.94-7.07 9.5-9 10.65-1.92-1.15-9-5.71-9-10.65v-.17a.41.41 0 000-.11A4.81 4.81 0 017.5 4a4.39 4.39 0 013.66 2.12L12 7.44l.84-1.32A4.39 4.39 0 0116.5 4 4.81 4.81 0 0121 9.07a.41.41 0 000 .11z" fill="red" /></svg>';
+            })
             heart.innerHTML = '<svg width="28" height="28" viewBox="0 0 24 24" class="hover:text-red-800 cursor-pointer"><path d="M20.42 4.82A5.23 5.23 0 0016.5 3 5.37 5.37 0 0012 5.58 5.37 5.37 0 007.5 3a5.23 5.23 0 00-3.92 1.82A6.35 6.35 0 002 9.07v.28c0 5.42 7.25 10.18 9.47 11.51a1 1 0 001 0C14.74 19.53 22 14.77 22 9.35v-.22-.06a6.35 6.35 0 00-1.58-4.25zM21 9.18v.17c0 4.94-7.07 9.5-9 10.65-1.92-1.15-9-5.71-9-10.65v-.17a.41.41 0 000-.11A4.81 4.81 0 017.5 4a4.39 4.39 0 013.66 2.12L12 7.44l.84-1.32A4.39 4.39 0 0116.5 4 4.81 4.81 0 0121 9.07a.41.41 0 000 .11z" fill="currentColor"/></svg>';
             namediv.append(name, heart);
 
@@ -9478,6 +9522,9 @@ function display(arr) {
             pdv.append(pprice, pp);
 
             var make = document.createElement("button");
+            make.addEventListener("click",function(){
+                bookitem(elem,index);
+            })
             make.setAttribute("class", "book");
             make.innerHTML = "Book Now " + `&nbsp` + ">";
 
@@ -9881,3 +9928,22 @@ document.getElementById("house").addEventListener("click",function(){
     
     display(hotel_arr);
 });
+
+
+
+document.getElementById("guest").addEventListener("mouseover",abc1);
+function abc1(){
+    document.querySelector(".guest_ghost").style="display:block;";
+}
+
+
+document.getElementById("guest").addEventListener("mouseout",abc2);
+function abc2(){
+    document.querySelector(".guest_ghost").style="display:none;";
+}
+
+
+
+function bookitem(elem,index){
+    localStorage.setItem("bookingdata",JSON.stringify(elem));
+}
