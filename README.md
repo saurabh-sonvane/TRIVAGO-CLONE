@@ -3,26 +3,34 @@
 
 ## **Project Description**
 
-The goal of the Project TRIVAGO-CLONE is to create our version of Trivago whick looks and functions similar to the website trivago.com. This provides ability to search hotels based on ocation, setting user preference like check-in and check-out date , booking hotels as well as paying online.
+The goal of TRIVAGO-CLONE was to create a replica of trivago.com that functions similarly to the original website.  This includes the ability to browse hotels based on location, create an account, setting user preferences like check-in and check-out date , booking hotels as well as paying online. The project was developed using only HTML, CSS, and JavaScript.
 
-## **Techologies used in this Project:**
+
+## **Tech stacks used :**
+To create this clone following Tech stack is used by contributors.  
+<br>
 <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/>
 <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>
-<img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E"/>
+<img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E"/>   
 
-* Document Object Model (DOM)
-* SMTP API and Elastic Email
-* Font Awesome
+
+
+* **Document Object Model (DOM)**
+* **SMTP API and Elastic Email**
+* **FlatIcons**
+* **FontAwesome**
+
+
+
+# **Project Status**
+
+TRIVAGO-CLONE is now complete and fully functional. The team has successfully implemented all of the necessary features and functionality of the website.
 
 ## About Trivago
 
 Founded in 2005 by three university friends in Düsseldorf (Germany), trivago has since become a leading global accommodation search website, focused on reshaping the way millions of travelers search for and compare hotels and other accommodations.
 
-
-## Deployed Link 
-
-https://relaxed-pothos-627527.netlify.app/
-
+<hr/>
 
 ## Interface Overview
 
@@ -54,6 +62,12 @@ https://relaxed-pothos-627527.netlify.app/
 <hr>
 <img src = "https://lh3.googleusercontent.com/J8H0fKSk5SriAjANGh5TfjZTsjtuj1ohWM35Qog1Zx_TZ-6PHM87gqCRSy2Ts2qFMenHNURE0Hfo0D_925n4VpYaHQQswM5E5TFj5Jf-BWb_SRjNMGbCiOVpTinquj-cZmzCor2H_H3c6y1k1AF2EiZBiA5518E7RjDzixWBpEm1u00d9oAJEVTwXLyIqNBe4AEdCBOglReJ9pYx-E_-sgQxvZNZ1pOguSSzTjBWiEr_YXuF1wo1tsANYLlRnbK-LWS0hz7bgb6Y4yHwxbIKt4IVubwCjgXjYEULcaa_AlbXfzMnHDllyandTedPHNwShxZxLEF8Y_osc_qXBCwzsz14d7Qa3NVA_Oy5j9pcxnr0W4jOA3EjMRLFClf7tQ4d_Qr7BQDr5mNNF5fvn0LUdncIktOW_LEHPfFswJOsSHM20T8PmJ8RtfCl1eu-3lhI2eoaHISuXCGh7XF6M064f1J00Op89toIuEPiU3t_r0QcSFlTxZHKUKO6rPjldenforQwkSYZogV7u-9iEul-2k5sipB84wmqG6JZD65fimmenIb6VUvBS5sY2zilUa__NjODA8meMj9kTzMQC3LL0fvP1aKlzfA44amXFcoKlJP9BBW7Lboza8bn2AIKSZ5Ps-qeldHNdKyBcxXkTMJdCP3PzyKZELojCkFmycs6TxnPfp2qEzlBw7LjamzuGD4F_vi6X5J2eEAAjRktVir_48t-QUWWs5gj2Mkth8D3kXV6odwIAGD0yyW9TajurYmjrJewOlNyN3oEuzPeEQtxJe4oRgZcP0FDwpNawBe3CTz8yj2MPxtTlyB2Ya4joCrCV_8bii_veE4WYz6nCmHf_4P-bCg7odCFb8xgqAsiCAzuVHf0pbnwjtAUw6GfMWPv0dodVTX1Exc_yahjtnhuVVB_qmGJcLf3pBTiXThlRAG3AyskC6cy1-Sf8k7HYiq01Dk3ijjq-NpG0z75NQ=w1873-h931-no?authuser=1" />
 <br>
+
+<hr/>
+
+## See Live
+Visit the Deployed version using this <a href="trivago-clone-s17200.netlify.app">link</a>  
+<hr/>
 
 ## Team Members and Contributors
 
