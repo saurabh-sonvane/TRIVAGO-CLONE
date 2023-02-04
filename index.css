@@ -488,11 +488,13 @@ font-size: 12px;
   margin: auto;
 }
 .containerForTopCities {
+  
   font-size: 14px;
   width: 100%;
   display: flex;
+justify-content: space-around;
   gap: 10px;
-  overflow-x: scroll;
+ 
 }
 .containerForTopDestinations {
   font-size: 14px;

@@ -190,7 +190,7 @@ function gotoLoginPage(){
 
 document.querySelector(".account_settings").addEventListener("click",gotoAccount);
 function gotoAccount(){
-    window.location.href="../Menu/account.html";
+    window.location.href="./Menu/account.html";
 }
 
 

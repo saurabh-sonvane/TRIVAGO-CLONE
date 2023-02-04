@@ -2,7 +2,7 @@
     font-family: system-ui;
  
 }
-
+/* 
 #navbar {
     top: 0;
     left: 0;
@@ -44,7 +44,7 @@
 
 #navlist a:hover {
     background-color: rgb(243, 243, 243);
-} 
+}  */
 
 /*             ------------------              Navbar end               ------------------------------------ */
 
@@ -57,7 +57,7 @@
 
 #sidebar {
     /* border: 1px solid red; */
-    margin-top: -1%;
+    margin-top: -3%;
     width: 12%;
     margin-right: 5%;
     margin-left: -3%;
@@ -105,7 +105,7 @@ hr.style11 {
     width: 39%;
     height: max-content;
     margin-left: -2%;
-    margin-top: -1%;
+    margin-top: -3%;
     margin-right: 2%;
 }
 
@@ -145,7 +145,7 @@ input:focus {
 
 .eyeicon {
     position: absolute;
-    top: 789px;
+    top: 810px;
     right: 498px;
 
 }
