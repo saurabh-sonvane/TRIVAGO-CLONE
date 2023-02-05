@@ -74,7 +74,7 @@ Visit the Deployed version using this <a href="https://trivago-clone-s17200.netl
 ### Arun Shaw
 - Github : Arun-ez
 - Visit Github : https://github.com/Arun-ez
-- Check out Linkedin : https://www.linkedin.com/in/himanshu-s-747a0b133/
+- Check out Linkedin : https://www.linkedin.com/mwlite/in/arun-shaw-60ba64240
 
 
 ### Saurabh Sonvane
