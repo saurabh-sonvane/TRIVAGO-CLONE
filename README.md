@@ -55,7 +55,7 @@ Founded in 2005 by three university friends in Düsseldorf (Germany), trivago ha
 ### Arun Shaw
 - Github : Arun-ez
 - Visit Github : https://github.com/Arun-ez
-- Check out Linkedin : https://www.linkedin.com/in/himanshu-s-747a0b133/
+- Check out Linkedin : 
 
 
 ### Saurabh Sonvane
