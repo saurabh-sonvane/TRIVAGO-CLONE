@@ -1,8 +1,8 @@
 
-window.onload =  function() {
+window.onload = function () {
     let bookElm = JSON.parse(localStorage.getItem("bookingdata"));
     display(bookElm);
-} 
+}
 
 function display(data) {
     let container = document.querySelector("#head");
@@ -13,8 +13,8 @@ function display(data) {
     container.append(image);
     let imageArray = data.Photos;
     let i = 0;
-    setInterval(function() {
-        if(i == imageArray.length) {
+    setInterval(function () {
+        if (i == imageArray.length) {
             i = 0;
         }
         container.innerHTML = "";
@@ -25,7 +25,7 @@ function display(data) {
         container.append(image1);
         i++;
     }, 3000);
-    
+
 
     let name = document.querySelector("#name");
     name.textContent = data.hotelName;
@@ -39,7 +39,7 @@ function display(data) {
     let allReviews = document.querySelector("#all");
     let review = Number.parseInt(data.review);
     let tag = "";
-    if(review > 1000) {
+    if (review > 1000) {
         tag = "Excellent";
     } else {
         tag = "Good"
@@ -62,22 +62,22 @@ function setData(data) {
     let total = document.querySelector("#total");
 
     let checkIn = (localStorage.getItem("checkInDate"));
-    let checkOut =(localStorage.getItem("checkOutDate"));
-    let roomsData=localStorage.getItem("rooms_number");
+    let checkOut = (localStorage.getItem("checkOutDate"));
+    let roomsData = localStorage.getItem("rooms_number");
 
     //taking out data
     let guests = JSON.parse(localStorage.getItem("totalGuest"));
     let bill = Number.parseInt(data.bookingCost);
-    let nightVal = findDuration(checkIn,checkOut);
+    let nightVal = findDuration(checkIn, checkOut);
     //processing data
-    let actual = bill*nightVal;
+    let actual = bill * nightVal;
     let durationVal = `${getDay(checkIn)} to ${getDay(checkOut)}`;
     let userprefVal = `${roomsData} Rooms, ${guests} Guests`;
     let roompriceVal = `Room price for ${nightVal} Night X ${guests} Guests`;
     let priceVal = actual;
-    let discountVal = actual*5/100;
-    let couponVal = actual*20/100;
-    let totalVal = actual-discountVal-couponVal+100; 
+    let discountVal = actual * 5 / 100;
+    let couponVal = actual * 20 / 100;
+    let totalVal = actual - discountVal - couponVal + 100;
 
     console.log(totalVal);
 
@@ -92,21 +92,21 @@ function setData(data) {
     total.textContent = "₹" + totalVal;
 }
 
-function findDuration(a,b) {
-    console.log(a,b);
+function findDuration(a, b) {
+    console.log(a, b);
     let date1 = new Date(a);
     let date2 = new Date(b);
     var diff = Math.abs(date2.getTime() - date1.getTime());
-    var duration = Math.ceil(diff / (1000 * 3600 * 24));  
+    var duration = Math.ceil(diff / (1000 * 3600 * 24));
     return duration;
 }
 
 function getDay(a) {
     let date = new Date(a);
-    let month =  date.toLocaleString('default', { month: 'short' });
+    let month = date.toLocaleString('default', { month: 'short' });
     let num = "";
-    for(let i = a.length-1; i >= 0; i--) {
-        if(a[i] == "-") {
+    for (let i = a.length - 1; i >= 0; i--) {
+        if (a[i] == "-") {
             break;
         }
 
@@ -119,7 +119,7 @@ function getDay(a) {
 function generateOtp() {
 
     let OTP = "";
-    for(let i = 0; i < 4; i++) {
+    for (let i = 0; i < 4; i++) {
         OTP += Math.floor(Math.random() * 9);
     }
 
@@ -129,15 +129,15 @@ function generateOtp() {
 
 function isValid(email) {
 
-    if(!email || email.length < 2) return false;
+    if (!email || email.length < 2) return false;
 
-    for(let i = 0; i < email.length; i++) {
+    for (let i = 0; i < email.length; i++) {
 
-        if(email[i] == " ") {
+        if (email[i] == " ") {
             return false;
         }
 
-        if(email[i] == "@") {
+        if (email[i] == "@") {
             return true;
         }
     }
@@ -146,14 +146,14 @@ function isValid(email) {
 document.querySelector("#otpButton").addEventListener("click", async function clicker() {
     let email = document.querySelector("#userEmail").value;
 
-    if(!isValid(email)) {
+    if (!isValid(email)) {
         alert("Invalid Email");
         return;
     }
 
     let OTP = generateOtp();
-    let status = await otpRequest(OTP,email);
-    if(status != 200) {
+    let status = await otpRequest(OTP, email);
+    if (status != 200) {
         alert("There is an issue sending OTP try again")
         return;
     }
@@ -168,32 +168,32 @@ document.querySelector("#otpButton").addEventListener("click", async function cl
     document.querySelector("#otpButton").removeEventListener("click", clicker);
 });
 
-document.querySelector("#otpVerify").onclick = function() {
+document.querySelector("#otpVerify").onclick = function () {
     let OTP = localStorage.getItem("OTP");
     let name = document.querySelector("#userName").value;
     let phone = document.querySelector("#userPhone").value;
     let email = document.querySelector("#userEmail").value;
     let userOtp = document.querySelector("#otpValue").value;
 
-    if(userOtp != OTP) {
+    if (userOtp != OTP) {
         alert("Incorrect OTP");
         return;
     }
 
-    if(name.length == 0 || phone.length < 10) {
+    if (name.length == 0 || phone.length < 10) {
         alert("Fill all the blocks");
         return;
     }
 
     document.querySelector("#heading").innerHTML = ` <i style = "color:green" class="fa-solid fa-circle-check"></i> Your Details`;
 
-    document.querySelector("#ext").innerHTML = getDetails(name,email,phone);
+    document.querySelector("#ext").innerHTML = getDetails(name, email, phone);
     document.querySelector("#paymentDetails").style.opacity = "100%";
     document.querySelector("#paymentOptions").style.display = "flex";
     payAthotel();
 }
 
-function getDetails(name,email,phone) {
+function getDetails(name, email, phone) {
     return `<div id="yourDetails">
     <div> Name: ${name} </div>
     <div style="border:1px solid black;"> </div>
@@ -206,10 +206,10 @@ function getDetails(name,email,phone) {
 let pay1 = document.querySelector("#opt1");
 let pay2 = document.querySelector("#opt2");
 
-pay1.onclick = function() {
+pay1.onclick = function () {
     let state1 = pay1.className;
     let state2 = pay2.className;
-    if(pay1.className == "setBlue") {
+    if (pay1.className == "setBlue") {
         pay1.className = state1;
         pay2.className = state2;
     } else {
@@ -220,10 +220,10 @@ pay1.onclick = function() {
     payAthotel();
 }
 
-pay2.onclick = function() {
+pay2.onclick = function () {
     let state1 = pay1.className;
     let state2 = pay2.className;
-    if(pay2.className == "setBlue") {
+    if (pay2.className == "setBlue") {
         pay1.className = state1;
         pay2.className = state2;
     } else {
@@ -242,8 +242,8 @@ function payAthotel() {
 
 function payNow() {
     document.querySelector("#pay").innerHTML = "";
-    document.querySelector("#pay").innerHTML = 
-    `<p> <i class="fa-solid fa-credit-card"></i> Add new card </p>
+    document.querySelector("#pay").innerHTML =
+        `<p> <i class="fa-solid fa-credit-card"></i> Add new card </p>
     <div style="display: grid; gap: 10px;">
         <input type="number" id="card" placeholder="Card">
         <input type="text" id="holder" placeholder="Enter cardholder name">
@@ -259,15 +259,15 @@ function payNow() {
 
 
 async function Pay(cvv) {
-    return new Promise(function(accept,reject) {
-        setTimeout(function() {
+    return new Promise(function (accept, reject) {
+        setTimeout(function () {
 
-            if(cvv == "123") {
+            if (cvv == "123") {
                 accept("Payment Successful");
             } else {
                 reject("Payment Denied!");
             }
-            
+
         }, 6000)
     })
 }
@@ -280,14 +280,14 @@ function payAndbook() {
     let date = document.querySelector("#validity").value;
     let cvv = document.querySelector("#cvv").value;
 
-    if(card.length != 16 || holder.length < 0 || date.length < 0 || cvv.length != 3) {
+    if (card.length != 16 || holder.length < 0 || date.length < 0 || cvv.length != 3) {
         alert("Invalid card details");
         return;
     }
 
     document.querySelector("#pay").innerHTML = "";
-    document.querySelector("#pay").innerHTML = 
-    `<div class="main">
+    document.querySelector("#pay").innerHTML =
+        `<div class="main">
     <p> Paying Securely ...  </p> 
     <div class="circle"> </div>
     </div>`;
@@ -301,16 +301,16 @@ function payAndbook() {
 }
 
 async function newPayment(cvv) {
-    try{
+    try {
         let response = await Pay(cvv);
 
-        if(response == "Payment Successful") {
+        if (response == "Payment Successful") {
             success(response);
         } else {
             rejected(response);
         }
-        
-    } catch(err) {
+
+    } catch (err) {
         console.log(err);
         rejected(err);
     }
@@ -318,16 +318,16 @@ async function newPayment(cvv) {
 
 function success(message) {
     document.querySelector("#pay").innerHTML = "";
-    document.querySelector("#pay").innerHTML = 
-    `<p> ${message} </p>
+    document.querySelector("#pay").innerHTML =
+        `<p> ${message} </p>
     <button id="final"> Confirm Booking </button>`;
     document.querySelector("#final").addEventListener("click", Confirm);
 }
 
 function rejected(message) {
     document.querySelector("#pay").innerHTML = "";
-    document.querySelector("#pay").innerHTML = 
-    `<p> ${message} </p>
+    document.querySelector("#pay").innerHTML =
+        `<p> ${message} </p>
     <button id="final"> Try Again </button>`;
     document.querySelector("#final").addEventListener("click", payNow);
     document.querySelector("#opt1").style.opacity = "100%";
@@ -338,5 +338,5 @@ function rejected(message) {
 
 function Confirm() {
     alert("Booking Successful");
-    window.open("../index.html");
+    window.location.href = "../index.html";
 }
