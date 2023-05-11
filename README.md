@@ -88,7 +88,7 @@ Founded in 2005 by three university friends in Düsseldorf (Germany), trivago ha
 <hr/>
 
 ## See Live
-Visit the Deployed version using this <a href="https://trivago-clone-s17200.netlify.app/">link</a>  
+Visit the Deployed version using this <a href="https://trivago-cloned.netlify.app/">link</a>  
 <hr/>
 
 ## Team Members and Contributors
